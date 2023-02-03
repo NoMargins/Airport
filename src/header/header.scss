@@ -1,16 +1,20 @@
 .header {
 	width: 100vw;
 	height: 10vh;
-	background-color: #1eb7ee;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	position: fixed;
+	background-color: #1eb7ee;
+
 	&_content-list {
 		list-style: none;
 		display: flex;
 		flex-direction: row;
+		justify-content: flex-end;
+		flex-grow: 1;
 		&__menu-item {
-			margin-right: 50px;
+			padding: 0 35px;
 			&-btn {
 				border: none;
 				width: auto;
