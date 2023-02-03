@@ -1,0 +1,27 @@
+.header {
+	width: 100vw;
+	height: 10vh;
+	background-color: #1eb7ee;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	&_content-list {
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		&__menu-item {
+			margin-right: 50px;
+			&-btn {
+				border: none;
+				width: auto;
+				height: 10vh;
+				background-color: #1eb7ee;
+				color: #fff;
+			}
+		}
+	}
+	&__logo {
+		margin-left: 20px;
+		margin-right: 50px;
+	}
+}
