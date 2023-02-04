@@ -18,7 +18,7 @@ class Header extends React.Component {
 			<section className='header'>
 				<img
 					className='header__logo'
-					src='./images/screenshot.png'
+					src='https://github.com/NoMargins/Airport/blob/main/src/header/images/screenshot.png'
 					alt='logo'
 				/>
 				<ul className='header_content-list'>

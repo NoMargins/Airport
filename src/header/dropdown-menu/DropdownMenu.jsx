@@ -8,6 +8,11 @@ const DropdownMenu = ({ list }) => {
 	return (
 		<div className={dropmenuStyles}>
 			<div className='dropdown-menu_left-side'>
+				<img
+					className='dropdown-menu_left-side__img'
+					src={leftElem.img}
+					alt='banner'
+				/>
 				<span className='dropdown-menu_left-side__title'>{leftElem.title}</span>
 				<span className='dropdown-menu_left-side__description'>
 					{leftElem.text}

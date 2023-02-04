@@ -18,6 +18,7 @@
 		flex-direction: row;
 		justify-content: flex-end;
 		flex-grow: 1;
+		flex-shrink: 1;
 		&__menu-item {
 			font-size: 20px;
 			cursor: pointer;
