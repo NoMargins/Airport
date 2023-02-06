@@ -14,7 +14,7 @@
 	top: 10vh;
 	left: 0;
 	bottom: 0;
-	z-index: 9;
+	z-index: 100;
 
 	&_left-side {
 		display: flex;
@@ -23,27 +23,33 @@
 		height: max-content;
 		margin-left: 10vw;
 		margin-bottom: 25px;
-		padding: 0 15px 15px 15px;
 		background-color: #fff;
 		box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
 		border-radius: 20px;
 		overflow: hidden;
-
+		&__img {
+			margin: 0;
+			border-radius: 0 0 0 70px;
+			max-width: 100%;
+		}
 		&__title {
 			line-height: 28px;
 			font-weight: 700;
 			font-size: 24px;
 			color: black;
-			margin-bottom: 10px;
+			margin: 15px 15px 10px 15px;
 		}
 		&__description {
 			font-size: 18px;
 			color: black;
-			margin-bottom: 20px;
+			margin: 0 15px 20px 15px;
 		}
 		&__btn {
 			height: 40px;
+			width: 60%;
+			margin: 0 0 20px 15px;
 			border: 2px solid #1eb7ee;
+			color: #1eb7ee;
 			border-radius: 20px;
 			background-color: #fff;
 			text-align: center;
@@ -77,8 +83,4 @@
 			}
 		}
 	}
-}
-
-.open {
-	opacity: 1;
 }

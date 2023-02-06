@@ -6,10 +6,16 @@
 	align-items: center;
 	position: fixed;
 	background-color: #1eb7ee;
+	z-index: 99;
 
-	&__logo {
-		max-width: 125px;
-		color: #fff;
+	&_logo-holder {
+		background: none;
+		border: none;
+		margin-left: 10%;
+		&__logo {
+			max-width: 125px;
+			color: #fff;
+		}
 	}
 
 	&_content-list {

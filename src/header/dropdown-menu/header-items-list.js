@@ -1,3 +1,7 @@
+import aviasales from '../../img/aviasales-1.jpg';
+import hotels from '../../img/hotels-2.jpg';
+import vip from '../../img/vip-3.jpg';
+
 const headerItemsList = [
 	{
 		title: 'For passangers',
@@ -7,7 +11,7 @@ const headerItemsList = [
 				title: 'Airline tickets',
 				text: 'Purchase tickets online',
 				buttonText: 'Search',
-				img: '../images/aviasales-1.jpg',
+				img: aviasales,
 			},
 			rightElem: [
 				{
@@ -50,7 +54,7 @@ const headerItemsList = [
 				title: 'Hotels worldwide',
 				text: 'Book hotels all over the world at best prices',
 				buttonText: 'View',
-				img: '../images/hotels-2.jpg',
+				img: hotels,
 			},
 			rightElem: [
 				{
@@ -62,6 +66,11 @@ const headerItemsList = [
 						{ title: 'Business lounge', id: 204 },
 						{ title: 'VIP service', id: 205 },
 						{ title: 'Hotel IEV', id: 206 },
+					],
+				},
+				{
+					title: '',
+					content: [
 						{ title: 'Transfer', id: 207 },
 						{ title: 'Baggage wrapping', id: 208 },
 						{ title: 'Long-term parking', id: 209 },
@@ -81,7 +90,7 @@ const headerItemsList = [
 				title: 'Terminal B',
 				text: 'Speed, comfort, confidentiality',
 				buttonText: 'Book now',
-				img: '../images/vip-3.jpg',
+				img: vip,
 			},
 			rightElem: [
 				{
@@ -109,7 +118,7 @@ const headerItemsList = [
 				title: 'Airline tickets',
 				text: 'Purchase tickets online',
 				buttonText: 'Search',
-				img: '../images/aviasales-1.jpg',
+				img: aviasales,
 			},
 			rightElem: [
 				{
@@ -135,7 +144,7 @@ const headerItemsList = [
 				title: 'Airline tickets',
 				text: 'Purchase tickets online',
 				buttonText: 'Search',
-				img: '../images/aviasales-1.jpg',
+				img: aviasales,
 			},
 			rightElem: [
 				{

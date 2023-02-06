@@ -25,6 +25,19 @@ module.exports = (env, argv) => {
 						'sass-loader',
 					],
 				},
+				{
+					test: /\.(gif|png|jpe?g|svg)$/i,
+					use: [
+						'file-loader',
+						{
+							loader: 'image-webpack-loader',
+							options: {
+								bypassOnDebug: true,
+								disable: true,
+							},
+						},
+					],
+				},
 			],
 		},
 		resolve: {
@@ -41,7 +54,7 @@ module.exports = (env, argv) => {
 			historyApiFallback: true,
 			open: true,
 			hot: true,
-			port: 8080,
+			port: 3000,
 		},
 	};
 

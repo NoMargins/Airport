@@ -25,12 +25,18 @@ const DropdownMenu = ({ list }) => {
 				{rightElem.map((el) => {
 					return (
 						<ul className='dropdown-menu_right-side__content-list'>
-							<span className='dropdown-menu_right-side__content-list-title'>
+							<span
+								key='0000'
+								className='dropdown-menu_right-side__content-list-title'
+							>
 								{el.title}
 							</span>
 							{el.content.map((item) => {
 								return (
-									<li className='dropdown-menu_right-side__content-list-item'>
+									<li
+										key={el.id}
+										className='dropdown-menu_right-side__content-list-item'
+									>
 										{item.title}
 									</li>
 								);
