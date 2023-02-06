@@ -2,7 +2,7 @@ import React from 'react';
 import ArrivalsJet from './svg/ArrivalsJet.jsx';
 import DeparturesJet from './svg/DeparturesJet.jsx';
 import SearchingGlass from './svg/SearchingGlass.jsx';
-import backgroundImage from '../img/background.jpg';
+import backgroundImage from './background.jpg';
 import './searchSection.scss';
 
 class SearchSection extends React.Component {
@@ -42,15 +42,15 @@ class SearchSection extends React.Component {
 							</button>
 						</form>
 					</div>
-				</div>
-				<div className='searching_flights'>
-					<div id='departures' className='searching_flights__left-btn btn'>
-						<DeparturesJet />
-						<p>All Departures</p>
-					</div>
-					<div id='arrivals' className='searching_flights__right-btn btn'>
-						<p>All Arrivals</p>
-						<ArrivalsJet />
+					<div className='searching_flights'>
+						<div id='departures' className='searching_flights__left-btn btn'>
+							<DeparturesJet />
+							<p>All Departures</p>
+						</div>
+						<div id='arrivals' className='searching_flights__right-btn btn'>
+							<p>All Arrivals</p>
+							<ArrivalsJet />
+						</div>
 					</div>
 				</div>
 			</section>
