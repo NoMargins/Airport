@@ -1,4 +1,5 @@
 .dropdown-menu {
+	width: 100%;
 	position: absolute;
 	display: flex;
 	flex-direction: row;
@@ -8,7 +9,6 @@
 	border-radius: 0 0 160px 0;
 	box-shadow: 0 5px 10px rgb(37 40 41 / 30%);
 	color: #1eb7ee;
-	width: 100%;
 	height: max-content;
 	padding: 20px 0;
 	top: 10vh;

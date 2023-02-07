@@ -2,7 +2,7 @@ import React from 'react';
 import ArrivalsJet from './svg/ArrivalsJet.jsx';
 import DeparturesJet from './svg/DeparturesJet.jsx';
 import SearchingGlass from './svg/SearchingGlass.jsx';
-import backgroundImage from './background.jpg';
+import backgroundImg from './background.jpg';
 import './searchSection.scss';
 
 class SearchSection extends React.Component {
@@ -12,12 +12,13 @@ class SearchSection extends React.Component {
 
 	render() {
 		return (
-			<section className='searching'>
-				<img
-					src={backgroundImage}
-					alt='background-img'
-					style={{ zIndex: 16 }}
-				/>
+			<section
+				className='searching'
+				style={{
+					backgroundImage: `url(${backgroundImg})`,
+					backgroundSize: 'cover',
+				}}
+			>
 				<div className='searching_container'>
 					<h2>Flight search</h2>
 					<div className='searching_textfield'>

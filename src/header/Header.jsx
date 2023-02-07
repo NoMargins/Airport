@@ -16,7 +16,7 @@ class Header extends React.Component {
 	render() {
 		const { menuItems, chosenItem, setFrame } = this.props;
 		return (
-			<section className='header'>
+			<header className='header'>
 				<div
 					className='header_logo-holder'
 					onClick={() =>
@@ -76,7 +76,7 @@ class Header extends React.Component {
 						<button className='language-btn'>EN</button>
 					</li>
 				</ul>
-			</section>
+			</header>
 		);
 	}
 }

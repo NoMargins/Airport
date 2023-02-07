@@ -1,18 +1,12 @@
 .searching {
 	width: 100vw;
-	margin: 20px 0;
+	height: 392px;
 	display: flex;
 	position: relative;
 	top: 10vh;
 	color: #fff;
 	box-shadow: 0 10px 15px rgb(0 0 0 / 38%);
 	overflow: clip;
-	& img {
-		position: relative;
-		width: auto;
-		height: 100%;
-		display: flex;
-	}
 
 	&_container {
 		display: flex;
@@ -102,7 +96,7 @@
 			display: flex;
 			flex-direction: row;
 			align-items: center;
-			margin: 0px 30px;
+			margin: 0px 40px;
 			padding: 0 30px;
 			color: #1eb7ee;
 			background-color: #fff;

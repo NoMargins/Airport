@@ -1,12 +1,22 @@
+import airport from '../imgs/first.JPG';
+import airline from '../imgs/second.jpg';
+import parking from '../imgs/third.jpg';
+import express from '../imgs/fourth.jpg';
+import services from '../imgs/fifth.jpg';
+import covid from '../imgs/covid-3.jpeg';
+import destinations from '../imgs/seventh.jpg';
+import vip from '../imgs/eighth.jpg';
+import mastercard from '../imgs/ningth.jpg';
+import infocentre from '../imgs/ten.jpg';
+
 const bodySections = [
 	{
 		id: 301,
 		elLocation: 'left',
 		title: 'Airport directions',
-		bodyText: `2 Medova str., Kyiv
-    Terminals A, B and D`,
+		bodyText: `2 Medova str., Kyiv \n Terminals A, B and D`,
 		hyperlinkText: 'Get directions',
-		img: null,
+		img: airport,
 	},
 	{
 		id: 302,
@@ -14,7 +24,7 @@ const bodySections = [
 		title: 'Airline tickets',
 		bodyText: `Any destination. Best fares.`,
 		hyperlinkText: 'Search',
-		img: null,
+		img: airline,
 	},
 	{
 		id: 303,
@@ -22,7 +32,7 @@ const bodySections = [
 		title: 'Parking',
 		bodyText: `Parking directions and fares`,
 		hyperlinkText: 'Find out more',
-		img: null,
+		img: parking,
 	},
 	{
 		id: 304,
@@ -30,7 +40,7 @@ const bodySections = [
 		title: 'Express line',
 		bodyText: `Express security pass`,
 		hyperlinkText: 'Search',
-		img: null,
+		img: express,
 	},
 	{
 		id: 305,
@@ -38,7 +48,7 @@ const bodySections = [
 		title: 'IEV services',
 		bodyText: 'Online booking',
 		hyperlinkText: 'Find out more',
-		img: null,
+		img: services,
 	},
 	{
 		id: 306,
@@ -46,7 +56,7 @@ const bodySections = [
 		title: 'COVID-19 testing',
 		bodyText: 'You can get tested 24/7 at Terminal A',
 		hyperlinkText: 'Find out more',
-		img: null,
+		img: covid,
 	},
 	{
 		id: 307,
@@ -54,7 +64,7 @@ const bodySections = [
 		title: 'Airlines & Destinations',
 		bodyText: 'Discover your flight and destination options',
 		hyperlinkText: 'View',
-		img: null,
+		img: destinations,
 	},
 	{
 		id: 308,
@@ -62,7 +72,7 @@ const bodySections = [
 		title: 'VIP terminal',
 		bodyText: 'Exclusive services for VIPs',
 		hyperlinkText: 'Terminal B',
-		img: null,
+		img: vip,
 	},
 	{
 		id: 309,
@@ -70,15 +80,16 @@ const bodySections = [
 		title: 'Mastercard fast line',
 		bodyText: `Easy passage through the controls`,
 		hyperlinkText: 'Find out more',
-		img: null,
+		img: mastercard,
 	},
 	{
 		id: 310,
 		elLocation: 'right',
 		title: 'Info centre',
-		bodyText: `24/7 Information
-        +38 (044) 500 49 73`,
+		bodyText: `24/7 Information \n +38 (044) 500 49 73 `,
 		hyperlinkText: 'Contact now',
-		img: null,
+		img: infocentre,
 	},
 ];
+
+export default bodySections;
