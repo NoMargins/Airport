@@ -15,7 +15,7 @@ class SearchSection extends React.Component {
 			<section
 				className='searching'
 				style={{
-					backgroundImage: `url(${backgroundImg})`,
+					backgroundImage: `url(${backgroundImg}) no-repeat center bottom`,
 					backgroundSize: 'cover',
 				}}
 			>

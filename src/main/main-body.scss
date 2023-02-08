@@ -65,6 +65,7 @@
 						&:hover {
 							color: #fff;
 							background-color: #1eb7ee;
+							transition: all 1s ease-in-out;
 						}
 					}
 				}
@@ -82,8 +83,11 @@ li.left-elem.top-elem {
 	margin-bottom: 20px;
 	&:hover {
 		border-radius: 0 120px 0 0;
+		transition: all 0.5s ease-in-out;
+
 		& .section-body {
 			border-radius: 0 120px 0 0;
+			transition: all 0.5s ease-in-out;
 		}
 	}
 	& .section-body {
@@ -99,8 +103,11 @@ li.right-elem.top-elem {
 	margin-bottom: 20px;
 	&:hover {
 		border-radius: 120px 0 0 0;
+		transition: all 0.5s ease-in-out;
+
 		& .section-body {
 			border-radius: 120px 0 0 0;
+			transition: all 0.5s ease-in-out;
 		}
 	}
 	& .section-body {
@@ -112,8 +119,11 @@ li.left-elem.bottom-elem {
 	border-radius: 0 0 198px 0;
 	&:hover {
 		border-radius: 0 0 120px 0;
+		transition: all 0.5s ease-in-out;
+
 		& .main-body__header {
 			border-radius: 0 0 120px 0;
+			transition: all 0.5s ease-in-out;
 		}
 	}
 	& .main-body__header {
@@ -125,8 +135,11 @@ li.right-elem.bottom-elem {
 	border-radius: 0 0 0 198px;
 	&:hover {
 		border-radius: 0 0 0 120px;
+		transition: all 0.5s ease-in-out;
+
 		& .main-body__header {
 			border-radius: 0 0 0 120px;
+			transition: all 0.5s ease-in-out;
 		}
 	}
 	& .main-body__header {
@@ -199,4 +212,13 @@ li.third-block.left-elem {
 
 li.third-block.right-elem {
 	width: 445px;
+}
+
+li.third-block.right-elem {
+	& .section-body {
+		& .description {
+			width: 72%;
+			text-align: right;
+		}
+	}
 }

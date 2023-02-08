@@ -1,4 +1,4 @@
-.info-list {
+.info-section {
 	width: 1120px;
 	margin-left: auto;
 	margin-right: auto;
@@ -20,12 +20,17 @@
 		margin-top: 14px;
 	}
 	& button {
-		background: none;
 		margin: 0;
 		padding: 0;
+		background: none;
 		border: none;
 		font-stretch: condensed;
 		font-size: 30px;
 		font-weight: 700;
+		cursor: pointer;
+		&:hover {
+			color: #fff;
+			transition: color 0.5s;
+		}
 	}
 }

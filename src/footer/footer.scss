@@ -24,12 +24,18 @@ footer {
 				font-size: 24px;
 
 				& li {
+					display: inline-block;
 					font-size: 16px;
 					border-bottom: 1px solid transparent;
 					-webkit-transition: 0.2s ease-out;
 					transition: 0.2s ease-out;
 					margin-bottom: 10px;
-					display: inline-block;
+					cursor: pointer;
+					&:hover {
+						text-decoration: underline;
+						text-decoration-color: #b8bdc1;
+					}
+
 					&:first-child {
 						font-weight: 700;
 						margin-bottom: 10px;
@@ -48,6 +54,7 @@ footer {
 			& .icons-container {
 				& .icon {
 					margin-right: 10px;
+					cursor: pointer;
 				}
 			}
 		}
