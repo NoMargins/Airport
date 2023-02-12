@@ -1,0 +1,185 @@
+.flight-info {
+	width: 100vw;
+	margin-top: 13vh;
+	margin-bottom: 330px;
+	& .covid {
+		max-width: 50%;
+		position: relative;
+		margin: 30px auto;
+		background-color: #1eb7ee;
+		color: #fff;
+		padding: 15px;
+		border-radius: 0 60px 0 0;
+		transition: all 0.5s ease-in-out;
+
+		&:hover {
+			border-radius: 0 20px 0 0;
+		}
+		& h2 {
+			margin: 0 0 12px 0;
+			padding: 0;
+			font-size: 20px;
+			font-weight: 700;
+		}
+		& span {
+			font-size: 16px;
+			font-weight: 400;
+		}
+		& img {
+			width: 40px;
+			position: absolute;
+			top: 50%;
+			left: 93%;
+		}
+	}
+	& .title {
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 70px;
+		font-weight: 300;
+		line-height: 80px;
+		margin: 0 0 20px 0;
+		padding: 0;
+		color: rgb(36, 34, 34);
+	}
+	&_input {
+		margin-bottom: 50px;
+	}
+	&_container {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&_board {
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+		&__results {
+			width: 100%;
+			min-height: 200px;
+			display: flex;
+			flex-direction: column;
+			background-color: #fff;
+			& .no-results {
+				margin: auto;
+				font-size: 30px;
+				font-weight: 700;
+				line-height: 45px;
+				color: rgb(36, 34, 34);
+			}
+		}
+		&__dates {
+			width: 100%;
+			padding-top: 20px;
+			display: flex;
+			flex-direction: row;
+			justify-content: left;
+			background-color: #fff;
+
+			& .dates-nav {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding: 0 2%;
+				cursor: pointer;
+
+				&.today {
+					border-bottom: 1px solid #1eb7ee;
+					& .calendar-date {
+						color: #1eb7ee;
+					}
+					& .calendar-title {
+						color: #1eb7ee;
+					}
+				}
+				&.closest {
+					border-bottom: 1px solid #b8b9b9;
+					&:hover {
+						border-bottom: 1px solid #1eb7ee;
+						& span {
+							color: #1eb7ee;
+						}
+					}
+				}
+				& .calendar-title {
+					font-size: 16px;
+					font-weight: 700;
+					line-height: 24px;
+					margin-top: 18px;
+				}
+			}
+			& span {
+				color: #b8b9b9;
+				font-size: 12px;
+				font-weight: 300;
+			}
+			& .calendar {
+				padding: 0 2%;
+				border: none;
+
+				& .square {
+					width: 50px;
+					height: 50px;
+					padding: 5px;
+					background-color: #1eb7ee;
+					text-align: center;
+					& .icon {
+						width: 40px;
+						height: 40px;
+						color: #fff;
+					}
+				}
+			}
+		}
+		&__header {
+			height: auto;
+			border-radius: 60px 60px 0 0;
+			background-color: #73d2f0;
+
+			& .searching-flights {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				background-color: transparent;
+
+				& .btn {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: center;
+					width: 50%;
+					border-radius: 60px 60px 0 0;
+					color: #fff;
+					transition: all 0.5s ease-in-out;
+
+					& p {
+						text-transform: uppercase;
+						font-size: 24px;
+						font-weight: 600;
+						color: #fff;
+					}
+					& svg {
+						width: 50px;
+						height: 50px;
+						margin: 0 10px;
+						z-index: 2;
+						& g {
+							fill: #fff;
+							fill-rule: nonzero;
+						}
+					}
+					&:hover {
+						background-color: #fff;
+						width: 60%;
+						& p {
+							color: #1eb7ee;
+						}
+						& svg g {
+							fill: #1eb7ee;
+						}
+					}
+				}
+			}
+		}
+	}
+}

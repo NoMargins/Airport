@@ -1,5 +1,5 @@
 export const GET_MENU = 'HEADER/GET_MENU';
-export const SET_CONTENT = 'HEADER/SET_CONTENT'
+export const SET_CONTENT = 'HEADER/SET_CONTENT';
 
 export const menuReceived = () => {
 	return {
@@ -14,4 +14,4 @@ export const setContent = (chosenFrame) => {
 			chosenFrame,
 		},
 	};
-}
+};

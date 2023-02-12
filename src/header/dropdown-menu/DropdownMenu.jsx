@@ -25,7 +25,10 @@ const DropdownMenu = ({ list }) => {
 				<div className='dropdown-menu_container__right-side'>
 					{rightElem.map((el) => {
 						return (
-							<ul className='dropdown-menu_container__right-side__content-list'>
+							<ul
+								key={el.id}
+								className='dropdown-menu_container__right-side__content-list'
+							>
 								<span
 									key='0000'
 									className='dropdown-menu_container__right-side__content-list-title'
@@ -35,7 +38,7 @@ const DropdownMenu = ({ list }) => {
 								{el.content.map((item) => {
 									return (
 										<li
-											key={el.id}
+											key={el.title}
 											className='dropdown-menu_container__right-side__content-list-item'
 										>
 											{item.title}

@@ -1,12 +1,21 @@
 footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	flex: 1;
+	background-image: none;
+	background-repeat: repeat;
+	background-attachment: scroll;
+	background-position: 0% 0%;
 	background: #595959;
-	padding: 40px 0;
 	color: #fff;
 
 	& .footer_container {
-		width: 1120px;
 		margin-left: auto;
 		margin-right: auto;
+		padding: 20px 40px;
+
 		&__main {
 			margin-bottom: 30px;
 			display: flex;
@@ -51,7 +60,13 @@ footer {
 				font-weight: 700;
 			}
 
+			& .fourth-col li:nth-child(2) {
+				margin-top: 7px;
+			}
+
 			& .icons-container {
+				margin: 0;
+				padding: 0;
 				& .icon {
 					margin-right: 10px;
 					cursor: pointer;
