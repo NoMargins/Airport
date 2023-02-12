@@ -8,7 +8,6 @@ import {
 const initialData = {
 	flightsList: [],
 	direction: null,
-	searchDate: new Date(),
 	searchRequest: '',
 	date: new Date(),
 };
@@ -33,7 +32,7 @@ const searchReducer = (state = initialData, action) => {
 		case SET_DATE:
 			return {
 				...state,
-				date: action.payload.date,
+				date: new Date(action.payload.date),
 			};
 		default:
 			return state;

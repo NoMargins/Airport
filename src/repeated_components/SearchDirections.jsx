@@ -41,4 +41,5 @@ const mapDispatch = {
 	fetchFlightsList: searchActions.fetchFlightsList,
 	setDirection: searchActions.setSearchDirection,
 };
+
 export default connect(null, mapDispatch)(SearchDirection);

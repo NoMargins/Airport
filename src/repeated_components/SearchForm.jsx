@@ -13,7 +13,12 @@ import {
 import SearchingGlass from './svg/SearchingGlass.jsx';
 import '../main/main-body-blocks/searchSection.scss';
 
-const SearchForm = ({ searchRequest, setSearchingRequest, dateSaved }) => {
+const SearchForm = ({
+	searchRequest,
+	setSearchingRequest,
+	dateSaved,
+	setDate,
+}) => {
 	return (
 		<div className='searching_textfield'>
 			<form className='searching_form'>
@@ -32,7 +37,9 @@ const SearchForm = ({ searchRequest, setSearchingRequest, dateSaved }) => {
 					type='date'
 					className='searching_form__date'
 					value={moment(dateSaved).format('YYYY-MM-DD')}
-					onChange={(e) => setDate(e.target.value)}
+					onChange={(e) => {
+						setDate(e.target.value);
+					}}
 				/>
 				<Link to='/searching' className='searching-btn'>
 					<input type='button' className='searching_form__btn' value='Search' />
