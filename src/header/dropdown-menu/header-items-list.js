@@ -1,6 +1,6 @@
-import aviasales from '../../img/aviasales-1.jpg';
-import hotels from '../../img/hotels-2.jpg';
-import vip from '../../img/vip-3.jpg';
+import aviasales from './imgs/1.jpg';
+import hotels from './imgs/2.jpg';
+import vip from './imgs/3.jpg';
 
 const headerItemsList = [
 	{
@@ -16,6 +16,7 @@ const headerItemsList = [
 			rightElem: [
 				{
 					title: 'Information',
+					id: 101,
 					content: [
 						{ title: 'COVID-19', id: 101 },
 						{ title: 'Before flight', id: 102 },
@@ -31,6 +32,7 @@ const headerItemsList = [
 				},
 				{
 					title: 'General',
+					id: 102,
 					content: [
 						{ title: 'On-line schedule', id: 111 },
 						{ title: 'Airport Directors ', id: 112 },
@@ -59,6 +61,7 @@ const headerItemsList = [
 			rightElem: [
 				{
 					title: 'All services',
+					id: 201,
 					content: [
 						{ title: 'COVID-19 testing', id: 201 },
 						{ title: 'Priority line', id: 202 },
@@ -70,6 +73,7 @@ const headerItemsList = [
 				},
 				{
 					title: '',
+					id: 202,
 					content: [
 						{ title: 'Transfer', id: 207 },
 						{ title: 'Baggage wrapping', id: 208 },
@@ -95,6 +99,7 @@ const headerItemsList = [
 			rightElem: [
 				{
 					title: '',
+					id: 301,
 					content: [
 						{ title: 'Terminal B', id: 301 },
 						{ title: 'VIP service', id: 302 },
@@ -123,6 +128,7 @@ const headerItemsList = [
 			rightElem: [
 				{
 					title: 'Corporate',
+					id: 401,
 					content: [
 						{ title: 'Corporate page', id: 401 },
 						{ title: 'Ground handling', id: 402 },
@@ -149,6 +155,7 @@ const headerItemsList = [
 			rightElem: [
 				{
 					title: 'Press Room',
+					id: 501,
 					content: [
 						{ title: 'Press Room main page', id: 501 },
 						{ title: 'Newsroom', id: 502 },

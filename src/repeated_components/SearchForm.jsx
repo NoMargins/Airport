@@ -1,24 +1,38 @@
-import React from 'react';
-import moment from 'moment';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import moment from 'moment';
+
 import {
 	searchRequestSelector,
 	dateSelector,
+	searchDirectionSelector,
 } from '../flights/flight-results/utilis/search.selectors';
-import { Link } from 'react-router-dom';
+
 import {
 	setSearchingRequest,
 	setDate,
+	fetchAction,
+	setSearchDirection,
 } from '../flights/flight-results/utilis/search.actions';
+
 import SearchingGlass from './svg/SearchingGlass.jsx';
+
 import '../main/main-body-blocks/searchSection.scss';
 
 const SearchForm = ({
 	searchRequest,
 	setSearchingRequest,
 	dateSaved,
+	setDirection,
+	fetchAction,
 	setDate,
 }) => {
+	const handleClick = () => {
+		setDirection('departure');
+		fetchAction();
+	};
+
 	return (
 		<div className='searching_textfield'>
 			<form className='searching_form'>
@@ -42,7 +56,12 @@ const SearchForm = ({
 					}}
 				/>
 				<Link to='/searching' className='searching-btn'>
-					<input type='button' className='searching_form__btn' value='Search' />
+					<input
+						type='button'
+						className='searching_form__btn'
+						value='Search'
+						onClick={handleClick}
+					/>
 				</Link>
 			</form>
 		</div>
@@ -53,10 +72,13 @@ const mapState = (state) => {
 	return {
 		searchRequest: searchRequestSelector(state),
 		dateSaved: dateSelector(state),
+		directionSaved: searchDirectionSelector(state),
 	};
 };
 const mapDispatch = {
 	setSearchingRequest,
 	setDate,
+	setDirection: setSearchDirection,
+	fetchAction,
 };
 export default connect(mapState, mapDispatch)(SearchForm);

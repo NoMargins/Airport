@@ -1,13 +1,12 @@
 const flightsUrl = 'https://api.iev.aero/api/flights';
 
-const fetchFlightsByDate = (date) => {
-	return fetch(`${flightsUrl}/${date}`).then((response) => {
-		if (response.ok) {
-			return response.json();
-		} else {
+export default function fetchFlightsByDate(date) {
+	return fetch(`${flightsUrl}/${date}`).then((res) => {
+		if (!res.ok) {
 			throw new Error('Failed to load the flights data');
 		}
+		return res.json();
 	});
-};
+}
 
-export default fetchFlightsByDate;
+//

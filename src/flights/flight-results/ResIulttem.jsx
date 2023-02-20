@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import classNames from 'class-names';
 import moment from 'moment';
 
@@ -12,7 +12,6 @@ const ResultItem = ({ flightsList, type }) => {
 		sheduled,
 		timeFact,
 		destination,
-		details,
 	} = flightsList;
 
 	const terminalStyles = classNames([
@@ -24,7 +23,6 @@ const ResultItem = ({ flightsList, type }) => {
 	]);
 
 	const statusText = type === 'arrival' ? 'Landed ' : 'Departed at ';
-
 	return (
 		<tr>
 			<td>
@@ -51,7 +49,7 @@ const ResultItem = ({ flightsList, type }) => {
 				<span>{flightNo}</span>
 			</td>
 			<td className='details'>
-				<Link to='/searching/details' state={{ details }}>
+				<Link to={`details/`}>
 					<span>Details</span>
 				</Link>
 			</td>
@@ -60,3 +58,5 @@ const ResultItem = ({ flightsList, type }) => {
 };
 
 export default ResultItem;
+
+// <Link to={`details/`} state={{ flightsList }}>

@@ -3,13 +3,16 @@ import {
 	SET_USERINPUT,
 	SET_DATE,
 	SET_DIRECTION,
+	SET_UPLOAD_STATUS,
 } from './search.actions';
 
 const initialData = {
 	flightsList: [],
-	direction: null,
+	direction: 'departure',
 	searchRequest: '',
-	date: new Date(),
+	date: new Date('2021, 01, 14'),
+	isPending: false,
+	error: null,
 };
 
 const searchReducer = (state = initialData, action) => {
@@ -33,6 +36,12 @@ const searchReducer = (state = initialData, action) => {
 			return {
 				...state,
 				date: new Date(action.payload.date),
+			};
+		case SET_UPLOAD_STATUS:
+			return {
+				...state,
+				isPending: action.payload.isPending,
+				error: action.payload.error,
 			};
 		default:
 			return state;

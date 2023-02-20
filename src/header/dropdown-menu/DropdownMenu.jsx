@@ -29,16 +29,13 @@ const DropdownMenu = ({ list }) => {
 								key={el.id}
 								className='dropdown-menu_container__right-side__content-list'
 							>
-								<span
-									key='0000'
-									className='dropdown-menu_container__right-side__content-list-title'
-								>
+								<li className='dropdown-menu_container__right-side__content-list-title'>
 									{el.title}
-								</span>
+								</li>
 								{el.content.map((item) => {
 									return (
 										<li
-											key={el.title}
+											key={item.title}
 											className='dropdown-menu_container__right-side__content-list-item'
 										>
 											{item.title}

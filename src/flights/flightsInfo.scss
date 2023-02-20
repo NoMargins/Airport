@@ -179,6 +179,16 @@
 						}
 					}
 				}
+				& .active-btn {
+					background-color: #fff;
+					width: 60%;
+					& p {
+						color: #1eb7ee;
+					}
+					& svg g {
+						fill: #1eb7ee;
+					}
+				}
 			}
 		}
 	}

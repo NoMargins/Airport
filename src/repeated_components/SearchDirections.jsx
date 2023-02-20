@@ -1,14 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { useLocation } from 'react-router-dom';
 import ArrivalsJet from './svg/ArrivalsJet.jsx';
 import * as searchActions from '../flights/flight-results/utilis/search.actions';
 import DeparturesJet from './svg/DeparturesJet.jsx';
 
-const SearchDirection = ({ fetchFlightsList, setDirection, addText }) => {
+const SearchDirection = ({ fetchAction, setDirection, addText }) => {
 	const handleClick = (direction) => {
 		setDirection(direction);
-		fetchFlightsList(direction);
+		fetchAction();
 	};
 
 	return (
@@ -38,8 +37,8 @@ const SearchDirection = ({ fetchFlightsList, setDirection, addText }) => {
 };
 
 const mapDispatch = {
-	fetchFlightsList: searchActions.fetchFlightsList,
 	setDirection: searchActions.setSearchDirection,
+	fetchAction: searchActions.fetchAction,
 };
 
 export default connect(null, mapDispatch)(SearchDirection);

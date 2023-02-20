@@ -4,7 +4,7 @@ import DropdownMenu from './dropdown-menu/DropdownMenu';
 import { mainItemsSelector, chosenFrameSelector } from './header.selectors';
 import * as menuActions from './header.actions';
 import { connect } from 'react-redux';
-import logo from '../img/logo.png';
+import logo from './dropdown-menu/imgs/logo.png';
 
 import './header.scss';
 
@@ -30,52 +30,51 @@ class Header extends React.Component {
 				</div>
 
 				<ul className='header_content-list'>
-					{menuItems.map((el) => {
+					{menuItems.map((el, index) => {
 						return (
-							<>
-								<MenuItem
-									key={el.id}
-									id={el.id}
-									chosenId={this.state.elemId}
-									isActive={this.state.showContent}
-									title={el.title}
-									onClick={() => {
-										if (
-											this.state.showContent === false &&
-											this.state.elemId === !el.id
-										) {
-											this.setState({
-												showContent: true,
-												elemId: el.id,
-											});
-											setFrame(el.droppingMenu);
-										}
-										if (
-											this.state.elemId === el.id &&
-											this.state.showContent === true
-										) {
-											this.setState({
-												showContent: false,
-											});
-											setFrame(null);
-										} else {
-											this.setState({
-												showContent: true,
-												elemId: el.id,
-											});
-											setFrame(el.droppingMenu);
-										}
-									}}
-								/>
-
-								{chosenItem != null && <DropdownMenu list={chosenItem} />}
-							</>
+							<MenuItem
+								key={index}
+								id={el.id}
+								chosenId={this.state.elemId}
+								isActive={this.state.showContent}
+								title={el.title}
+								onClick={() => {
+									if (
+										this.state.showContent === false &&
+										this.state.elemId === !el.id
+									) {
+										this.setState({
+											showContent: true,
+											elemId: el.id,
+										});
+										setFrame(el.droppingMenu);
+									}
+									if (
+										this.state.elemId === el.id &&
+										this.state.showContent === true
+									) {
+										this.setState({
+											showContent: false,
+										});
+										setFrame(null);
+									} else {
+										this.setState({
+											showContent: true,
+											elemId: el.id,
+										});
+										setFrame(el.droppingMenu);
+									}
+								}}
+							/>
 						);
 					})}
-					<li key='000' className='header_content-list__menu-item'>
+					<li className='header_content-list__menu-item'>
 						<button className='language-btn'>EN</button>
 					</li>
 				</ul>
+				{chosenItem != null && (
+					<DropdownMenu key={chosenItem.id} list={chosenItem} />
+				)}
 			</header>
 		);
 	}

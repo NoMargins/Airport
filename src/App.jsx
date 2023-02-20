@@ -7,7 +7,7 @@ import Header from './header/Header';
 import MainBody from './main/MainBody';
 import FlightInfo from './flights/FlightsInfo';
 import FooterElem from './footer/Footer.jsx';
-import FlightDetails from './flights/flight-results/FlightDetails';
+import FlightDetails from './flights/flight-results/flight-details/FlightDetails';
 
 const App = () => {
 	return (
@@ -18,7 +18,7 @@ const App = () => {
 					<Routes>
 						<Route path='/' element={<MainBody />} />
 						<Route path='/searching' element={<FlightInfo />} />
-						<Route path='/searching/details' element={<FlightDetails />} />
+						<Route path='/details' element={<FlightDetails />} />
 					</Routes>
 				</BrowserRouter>
 				<FooterElem />
@@ -28,3 +28,5 @@ const App = () => {
 };
 
 export default App;
+
+/* <Route path='/searching/details/:id' element={<FlightDetails />} /> */
