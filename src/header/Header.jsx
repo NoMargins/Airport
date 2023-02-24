@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import PropTypes, { array } from 'prop-types';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import MenuItem from './MenuItem';
 import DropdownMenu from './dropdown-menu/DropdownMenu';
@@ -13,6 +13,21 @@ import './header.scss';
 const Header = ({ menuItems, chosenItem, setFrame }) => {
 	const [elemId, setElemId] = useState(null);
 	const [showContent, setShowContent] = useState(false);
+
+	useEffect(() => {
+		const handleClick = (e) => {
+			if (e.target.closest('.header_content-list__menu-item')) {
+				return;
+			}
+			setShowContent(false);
+			setElemId(null);
+		};
+
+		document.addEventListener('click', handleClick);
+		return () => {
+			document.removeEventListener('click', handleClick);
+		};
+	}, []);
 
 	const handleMenuItemClick = (contentBoolean, elemIdValue) => {
 		setElemId(elemIdValue);
@@ -61,9 +76,7 @@ const Header = ({ menuItems, chosenItem, setFrame }) => {
 					<span className='mobile-menu'>—</span>
 				</li>
 			</ul>
-			{chosenItem != null && (
-				<DropdownMenu key={chosenItem.id} list={chosenItem} />
-			)}
+			{showContent && <DropdownMenu key={chosenItem.id} list={chosenItem} />}
 		</header>
 	);
 };
