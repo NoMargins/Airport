@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 import {
@@ -67,6 +68,19 @@ const SearchForm = ({
 			</form>
 		</div>
 	);
+};
+
+SearchForm.propTypes = {
+	searchRequest: PropTypes.string,
+	setSearchingRequest: PropTypes.func,
+	dateSaved: PropTypes.oneOfType([
+		PropTypes.object,
+		PropTypes.number,
+		PropTypes.string,
+	]),
+	setDirection: PropTypes.func,
+	fetchAction: PropTypes.func,
+	setDate: PropTypes.func,
 };
 
 const mapState = (state) => {

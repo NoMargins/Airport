@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'class-names';
 
 const MenuItem = ({ title, onClick, isActive, id, chosenId }) => {
@@ -16,6 +17,14 @@ const MenuItem = ({ title, onClick, isActive, id, chosenId }) => {
 			</li>
 		</>
 	);
+};
+
+MenuItem.propTypes = {
+	title: PropTypes.string,
+	onClick: PropTypes.func,
+	isActive: PropTypes.bool,
+	id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	chosenId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 export default MenuItem;

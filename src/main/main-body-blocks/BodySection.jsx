@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const BodySection = ({
 	sectionClasses,
@@ -31,6 +32,15 @@ const BodySection = ({
 			</div>
 		</li>
 	);
+};
+
+BodySection.propTypes = {
+	sectionClasses: PropTypes.string,
+	imgSrs: PropTypes.string,
+	title: PropTypes.string,
+	description: PropTypes.string,
+	hyperlinkText: PropTypes.string,
+	isBottom: PropTypes.bool,
 };
 
 export default BodySection;

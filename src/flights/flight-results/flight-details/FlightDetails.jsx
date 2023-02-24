@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import flightImg from './img/1.png';
 import planeImg from './img/plane.jpg';
@@ -134,6 +135,25 @@ const FlightDetails = () => {
 			)}
 		</section>
 	);
+};
+
+FlightDetails.propTypes = {
+	flightsList: PropTypes.object,
+	type: PropTypes.string,
+	timeFact: PropTypes.oneOfType([
+		PropTypes.object,
+		PropTypes.string,
+		PropTypes.number,
+	]),
+	sheduled: PropTypes.oneOfType([
+		PropTypes.object,
+		PropTypes.string,
+		PropTypes.number,
+	]),
+	destination: PropTypes.string,
+	terminal: PropTypes.string,
+	flightNo: PropTypes.string,
+	shortId: PropTypes.string,
 };
 
 export default FlightDetails;

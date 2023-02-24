@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './dropdown-menu.scss';
 
 const DropdownMenu = ({ list }) => {
@@ -49,6 +50,12 @@ const DropdownMenu = ({ list }) => {
 			</div>
 		</div>
 	);
+};
+
+DropdownMenu.propTypes = {
+	list: PropTypes.object,
+	leftElem: PropTypes.object,
+	rightElem: PropTypes.array,
 };
 
 export default DropdownMenu;

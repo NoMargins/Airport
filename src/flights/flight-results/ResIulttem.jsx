@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import classNames from 'class-names';
 import moment from 'moment';
 
@@ -58,6 +59,25 @@ const ResultItem = ({ flightsList, type }) => {
 	);
 };
 
-export default ResultItem;
+ResultItem.propTypes = {
+	flightsList: PropTypes.object,
+	type: PropTypes.string,
+	id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	terminal: PropTypes.string,
+	flightNo: PropTypes.string,
+	airlineLogo: PropTypes.string,
+	airlineName: PropTypes.string,
+	sheduled: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.object,
+		PropTypes.number,
+	]),
+	timeFact: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.object,
+		PropTypes.number,
+	]),
+	destination: PropTypes.string,
+};
 
-// <Link to={`details/`} state={{ flightsList }}>
+export default ResultItem;

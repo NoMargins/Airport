@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import { connect } from 'react-redux';
 import classNames from 'class-names';
@@ -30,7 +31,6 @@ const FlightInfo = ({
 	setDirection,
 	fetchAction,
 	isPending,
-	error,
 	setDate,
 	searchDate,
 }) => {
@@ -160,6 +160,16 @@ const FlightInfo = ({
 			</div>
 		</section>
 	);
+};
+
+FlightInfo.propTypes = {
+	flightsList: PropTypes.array,
+	searchDirection: PropTypes.string,
+	setDirection: PropTypes.func,
+	fetchAction: PropTypes.func,
+	isPending: PropTypes.bool,
+	setDate: PropTypes.func,
+	searchDate: PropTypes.object,
 };
 
 const mapState = (state) => {

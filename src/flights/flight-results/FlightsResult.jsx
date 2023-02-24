@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './flight-results.scss';
 import ResultItem from './ResIulttem';
 
@@ -23,6 +24,11 @@ const FlightsResult = ({ list, type }) => {
 			</tbody>
 		</table>
 	);
+};
+
+FlightsResult.propTypes = {
+	list: PropTypes.array,
+	type: PropTypes.string,
 };
 
 export default FlightsResult;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import ArrivalsJet from './svg/ArrivalsJet.jsx';
 import * as searchActions from '../flights/flight-results/utilis/search.actions';
 import DeparturesJet from './svg/DeparturesJet.jsx';
@@ -34,6 +35,12 @@ const SearchDirection = ({ fetchAction, setDirection, addText }) => {
 			</div>
 		</>
 	);
+};
+
+SearchDirection.propTypes = {
+	fetchAction: PropTypes.func,
+	setDirection: PropTypes.func,
+	addText: PropTypes.string,
 };
 
 const mapDispatch = {

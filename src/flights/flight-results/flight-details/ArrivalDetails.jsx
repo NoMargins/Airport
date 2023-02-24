@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CirclePriorityLine from './circles/CirclePriority';
 import CircleTaxi from './circles/CircleTaxi';
 import vipImg from './img/2.jpg';
@@ -183,6 +184,13 @@ const ArrivalDetails = ({ destination, sheduleTime, factTime, shortId }) => {
 			</div>
 		</div>
 	);
+};
+
+ArrivalDetails.propTypes = {
+	destination: PropTypes.string.isRequired,
+	sheduleTime: PropTypes.string.isRequired,
+	factTime: PropTypes.string.isRequired,
+	shortId: PropTypes.string.isRequired,
 };
 
 export default ArrivalDetails;

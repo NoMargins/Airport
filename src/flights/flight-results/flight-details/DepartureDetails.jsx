@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import priorityImg from './img/priority.svg';
 import covidImg from './img/covid.jpeg';
@@ -377,6 +377,14 @@ const DepartureDetails = ({
 			</div>
 		</div>
 	);
+};
+
+DepartureDetails.propTypes = {
+	destination: PropTypes.string.isRequired,
+	sheduleTime: PropTypes.string.isRequired,
+	shortId: PropTypes.string.isRequired,
+	sheduled: PropTypes.object.isRequired,
+	terminal: PropTypes.string.isRequired,
 };
 
 export default DepartureDetails;

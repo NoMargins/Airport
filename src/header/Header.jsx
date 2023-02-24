@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import PropTypes, { array } from 'prop-types';
 import { Link } from 'react-router-dom';
 import MenuItem from './MenuItem';
 import DropdownMenu from './dropdown-menu/DropdownMenu';
@@ -12,7 +13,6 @@ import './header.scss';
 const Header = ({ menuItems, chosenItem, setFrame }) => {
 	const [elemId, setElemId] = useState(null);
 	const [showContent, setShowContent] = useState(false);
-
 
 	const handleMenuItemClick = (contentBoolean, elemIdValue) => {
 		setElemId(elemIdValue);
@@ -66,6 +66,12 @@ const Header = ({ menuItems, chosenItem, setFrame }) => {
 			)}
 		</header>
 	);
+};
+
+Header.propTypes = {
+	menuItems: PropTypes.array,
+	chosenItem: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+	setFrame: PropTypes.func,
 };
 
 const mapState = (state) => {

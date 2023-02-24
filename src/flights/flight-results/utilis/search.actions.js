@@ -220,7 +220,6 @@ export const fetchAction = () => {
 		dispatch(setUploadStatus(true));
 		fetchFlightsByDate(dateSaved).then((data) => {
 			dispatch(setUploadStatus(false, null));
-			console.log(data);
 			dispatch(setFlightsListReceived(data, direction));
 		});
 	};
