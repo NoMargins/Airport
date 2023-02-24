@@ -5,7 +5,7 @@ import express from '../imgs/fourth.jpg';
 import services from '../imgs/fifth.jpg';
 import covid from '../imgs/covid-3.jpeg';
 import destinations from '../imgs/seventh.jpg';
-import vip from '../imgs/eighth.jpg';
+import vip from '../imgs/vip.jpg';
 import mastercard from '../imgs/ninth.jpg';
 import infocentre from '../imgs/ten.jpg';
 
