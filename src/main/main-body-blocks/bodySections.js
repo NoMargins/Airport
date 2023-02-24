@@ -6,7 +6,7 @@ import services from '../imgs/fifth.jpg';
 import covid from '../imgs/covid-3.jpeg';
 import destinations from '../imgs/seventh.jpg';
 import vip from '../imgs/eighth.jpg';
-import mastercard from '../imgs/ningth.jpg';
+import mastercard from '../imgs/ninth.jpg';
 import infocentre from '../imgs/ten.jpg';
 
 const bodySections = [
