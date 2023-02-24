@@ -46,6 +46,7 @@ const SearchForm = ({
 					placeholder='Airline, destination or fligth #'
 					value={searchRequest}
 					onChange={(e) => setSearchingRequest(e.target.value)}
+					autoComplete='off'
 				/>
 				<input
 					type='date'

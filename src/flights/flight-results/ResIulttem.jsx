@@ -5,6 +5,7 @@ import moment from 'moment';
 
 const ResultItem = ({ flightsList, type }) => {
 	const {
+		id,
 		terminal,
 		flightNo,
 		airlineLogo,
@@ -39,7 +40,7 @@ const ResultItem = ({ flightsList, type }) => {
 			<td className='status'>
 				{statusText + moment(new Date(timeFact)).format('HH:mm')}
 			</td>
-			<td className='Airline'>
+			<td className='airline'>
 				<div className='logo'>
 					<img alt='logo' src={airlineLogo} />
 				</div>
@@ -49,7 +50,7 @@ const ResultItem = ({ flightsList, type }) => {
 				<span>{flightNo}</span>
 			</td>
 			<td className='details'>
-				<Link to={`details/`}>
+				<Link to={`./details/:${id}`} state={{ flightsList, type }}>
 					<span>Details</span>
 				</Link>
 			</td>

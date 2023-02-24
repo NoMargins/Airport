@@ -1,20 +1,23 @@
+@import 'variables';
+@import 'breakpoints';
+
 * {
 	box-sizing: border-box;
 }
 
 body {
 	font-family: 'Open-Sans', sans-serif;
-	font-size: 24px;
+	font-size: $font-size-base;
 	margin: 0;
 	padding: 0;
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	color: #2f2f2f;
-	background-color: #e7efec;
+	color: $main-font-color;
+	background-color: $main-body-background;
 }
 
 #root {
-	background-color: #e7efec;
+	background-color: $main-body-background;
 }

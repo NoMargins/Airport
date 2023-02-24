@@ -9,6 +9,7 @@ import FlightsResult from './flight-results/FlightsResult';
 import {
 	setSearchDirection,
 	fetchAction,
+	setDate,
 } from './flight-results/utilis/search.actions';
 import DeparturesJet from '../repeated_components/svg/DeparturesJet';
 import ArrivalsJet from '../repeated_components/svg/ArrivalsJet';
@@ -17,6 +18,7 @@ import {
 	flightsListSelector,
 	isPendingSelector,
 	searchDirectionSelector,
+	dateSelector,
 } from './flight-results/utilis/search.selectors';
 import './flightsInfo.scss';
 import SearchForm from '../repeated_components/SearchForm';
@@ -29,7 +31,10 @@ const FlightInfo = ({
 	fetchAction,
 	isPending,
 	error,
+	setDate,
+	searchDate,
 }) => {
+	const userDate = moment(searchDate).format('DD/MM/YY');
 	const thisDate = moment(new Date()).format('DD/MM');
 	const yestDate = moment(new Date().setDate(new Date().getDate() - 1)).format(
 		'DD/MM'
@@ -37,14 +42,20 @@ const FlightInfo = ({
 	const tomorrowDate = moment(
 		new Date().setDate(new Date().getDate() + 1)
 	).format('DD/MM');
+	const thisDateFull = new Date();
+	const tomorrowDateFull = new Date().setDate(new Date().getDate() + 1);
+	const yestDateFull = new Date().setDate(new Date().getDate() - 1);
 
-	const noFlights = searchDirection === null;
+	const noFlights = flightsList.length < 1 && isPending === false;
 
 	const handleClick = (direction) => {
 		setDirection(direction);
 		fetchAction();
 	};
-
+	const handleDateChangeClick = (date) => {
+		setDate(date);
+		fetchAction();
+	};
 	const leftBtnStyles = classNames([
 		'btn',
 		'left-btn',
@@ -95,8 +106,14 @@ const FlightInfo = ({
 					</div>
 					<div className='flight-info_board__dates'>
 						<div className='calendar dates-nav'>
-							<span className='calendar-date'>{thisDate}</span>
+							<span className='calendar-date'>{userDate}</span>
 							<div className='square'>
+								<form>
+									<input
+										type='date'
+										onChange={(e) => setDate(e.target.value)}
+									/>
+								</form>
 								<FontAwesomeIcon className='icon' icon={regular('calendar')} />
 							</div>
 						</div>
@@ -104,17 +121,30 @@ const FlightInfo = ({
 							<span className='dates-nav_yesterday__date calendar-date'>
 								{yestDate}
 							</span>
-							<span className='dates-nav_yesterday__title calendar-title'>
+							<span
+								className='dates-nav_yesterday__title calendar-title'
+								onClick={() => handleDateChangeClick(yestDateFull)}
+							>
 								YESTERDAY
 							</span>
 						</div>
-						<div className='dates-nav today closest'>
+						<div className='dates-nav closest'>
 							<span className='calendar-date'>{thisDate}</span>
-							<span className='calendar-title '>TODAY</span>
+							<span
+								className='calendar-title'
+								onClick={() => handleDateChangeClick(thisDateFull)}
+							>
+								TODAY
+							</span>
 						</div>
 						<div className='dates-nav closest'>
 							<span className='calendar-date'>{tomorrowDate}</span>
-							<span className='calendar-title'>TOMORROW</span>
+							<span
+								className='calendar-title'
+								onClick={() => handleDateChangeClick(tomorrowDateFull)}
+							>
+								TOMORROW
+							</span>
 						</div>
 					</div>
 					<div className='flight-info_board__results'>
@@ -123,9 +153,7 @@ const FlightInfo = ({
 						)}
 						{isPending && <span className='no-results'>Loading...</span>}
 
-						{!isPending && noFlights && (
-							<span className='no-results'>No Flight - {error}</span>
-						)}
+						{noFlights && <span className='no-results'>No Flights</span>}
 					</div>
 				</div>
 				<CovidTesting />
@@ -140,12 +168,14 @@ const mapState = (state) => {
 		searchDirection: searchDirectionSelector(state),
 		isPending: isPendingSelector(state),
 		error: errorSelector(state),
+		searchDate: dateSelector(state),
 	};
 };
 
 const mapDispatch = {
 	setDirection: setSearchDirection,
 	fetchAction,
+	setDate,
 };
 
 export default connect(mapState, mapDispatch)(FlightInfo);

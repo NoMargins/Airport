@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import MenuItem from './MenuItem';
 import DropdownMenu from './dropdown-menu/DropdownMenu';
 import { mainItemsSelector, chosenFrameSelector } from './header.selectors';
@@ -8,77 +9,64 @@ import logo from './dropdown-menu/imgs/logo.png';
 
 import './header.scss';
 
-class Header extends React.Component {
-	state = {
-		showContent: false,
-	};
+const Header = ({ menuItems, chosenItem, setFrame }) => {
+	const [elemId, setElemId] = useState(null);
+	const [showContent, setShowContent] = useState(false);
 
-	render() {
-		const { menuItems, chosenItem, setFrame } = this.props;
-		return (
-			<header className='header'>
+
+	const handleMenuItemClick = (contentBoolean, elemIdValue) => {
+		setElemId(elemIdValue);
+		setShowContent(contentBoolean);
+	};
+	return (
+		<header className='header'>
+			<Link to='./'>
 				<div
 					className='header_logo-holder'
-					onClick={() =>
-						this.setState({
-							showContent: false,
-							elemId: null,
-						})
-					}
+					onClick={() => handleMenuItemClick(false, null)}
 				>
 					<img className='header_logo-holder__logo' src={logo} alt='logo' />
 				</div>
+			</Link>
 
-				<ul className='header_content-list'>
-					{menuItems.map((el, index) => {
-						return (
-							<MenuItem
-								key={index}
-								id={el.id}
-								chosenId={this.state.elemId}
-								isActive={this.state.showContent}
-								title={el.title}
-								onClick={() => {
-									if (
-										this.state.showContent === false &&
-										this.state.elemId === !el.id
-									) {
-										this.setState({
-											showContent: true,
-											elemId: el.id,
-										});
-										setFrame(el.droppingMenu);
-									}
-									if (
-										this.state.elemId === el.id &&
-										this.state.showContent === true
-									) {
-										this.setState({
-											showContent: false,
-										});
-										setFrame(null);
-									} else {
-										this.setState({
-											showContent: true,
-											elemId: el.id,
-										});
-										setFrame(el.droppingMenu);
-									}
-								}}
-							/>
-						);
-					})}
-					<li className='header_content-list__menu-item'>
-						<button className='language-btn'>EN</button>
-					</li>
-				</ul>
-				{chosenItem != null && (
-					<DropdownMenu key={chosenItem.id} list={chosenItem} />
-				)}
-			</header>
-		);
-	}
-}
+			<ul className='header_content-list'>
+				{menuItems.map((el, index) => {
+					return (
+						<MenuItem
+							key={index}
+							id={el.id}
+							chosenId={elemId}
+							isActive={showContent}
+							title={el.title}
+							onClick={() => {
+								if (showContent === false && elemId === !el.id) {
+									handleMenuItemClick(true, el.id);
+									setFrame(el.droppingMenu);
+								}
+								if (elemId === el.id && showContent === true) {
+									handleMenuItemClick(false, null);
+									setFrame(null);
+								} else {
+									handleMenuItemClick(true, el.id);
+									setFrame(el.droppingMenu);
+								}
+							}}
+						/>
+					);
+				})}
+				<li className='header_content-list__menu-item'>
+					<button className='language-btn'>EN</button>
+				</li>
+				<li className='header_content-list__menu-item'>
+					<span className='mobile-menu'>—</span>
+				</li>
+			</ul>
+			{chosenItem != null && (
+				<DropdownMenu key={chosenItem.id} list={chosenItem} />
+			)}
+		</header>
+	);
+};
 
 const mapState = (state) => {
 	return {

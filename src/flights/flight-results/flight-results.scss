@@ -1,15 +1,43 @@
+@import '../../variables';
+@import '../../breakpoints';
+
 .found-results {
 	margin-top: 30px;
 	width: 100%;
 	border-collapse: collapse;
+	table-layout: fixed;
+	@include mobile-screen {
+		margin-top: 0;
+		font-size: 12px;
+	}
 	& th {
 		padding: 12px;
-		font-size: 16px;
+		font-size: $font-size-base;
 		font-weight: 600;
 		color: #95989a;
+		@include mobile-screen {
+			display: none;
+			// font-size: 12px;
+		}
+		@include tablet-screen {
+			font-size: 12px;
+		}
 	}
 	& tr {
 		height: 40px;
+		@include mobile-screen {
+			display: flex;
+		}
+		&:hover {
+			box-shadow: $box-shadow-popular;
+			& td:nth-child(7) {
+				& span {
+					color: #0a3159;
+					transition: color 0.5s ease-in-out;
+					text-decoration: underline;
+				}
+			}
+		}
 	}
 	& td {
 		padding: 8px;
@@ -17,6 +45,14 @@
 		font-weight: 400;
 		line-height: 20px;
 		color: #212529;
+		@include mobile-screen {
+			font-size: 12px;
+			padding: 0;
+			padding-top: 1%;
+		}
+		@include tablet-screen {
+			font-size: 14px;
+		}
 	}
 
 	& tbody tr:nth-child(odd) {
@@ -32,58 +68,143 @@
 		font-weight: 700;
 		font-size: 22px;
 		line-height: 40px;
+		@include mobile-screen {
+			width: 20px;
+			height: 20px;
+			font-size: 16px;
+			line-height: 1;
+		}
 		&.green {
 			border: 1px solid #63c745;
 			color: #63c745;
 		}
 		&.blue {
-			border: 1px solid #1eb7ee;
-			color: #1eb7ee;
+			border: 1px solid $primary-color;
+			color: $primary-color;
 		}
 	}
 	& th:first-child {
 		width: 10%;
+		@include mobile-screen {
+			width: 1px;
+		}
 	}
 	& th:nth-child(2) {
-		width: 8%;
-		text-align: center;
+		width: 10%;
+		text-align: left;
 	}
 
 	& th:nth-child(3) {
-		width: 12%;
+		width: 17%;
 	}
 	& th:nth-child(4) {
-		width: 20%;
+		width: 17%;
 	}
 
 	& th:nth-child(5) {
 		width: 20%;
+		text-align: center;
 	}
+	& th:nth-child(6) {
+		width: 12%;
+	}
+	& th:nth-child(7) {
+		width: 12%;
+	}
+	& td:nth-child(1) {
+		padding: 0;
+		@include mobile-screen {
+			width: 10%;
+		}
+	}
+	& td:nth-child(2) {
+		@include mobile-screen {
+			width: 10%;
+		}
+	}
+	& td.destination {
+		padding: 1%;
+		width: 20%;
+		overflow: hidden;
+		text-overflow: clip;
+
+		@include mobile-screen {
+			width: 18%;
+			padding: 1%;
+		}
+	}
+	& td.status {
+		width: 16%;
+		@include mobile-screen {
+			width: 16%;
+		}
+	}
+
+	& td.flight {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		@include mobile-screen {
+			width: 12%;
+		}
+	}
+	& td.details {
+		@include mobile-screen {
+			width: 10%;
+		}
+		& a {
+			text-decoration: none;
+
+			& span {
+				color: transparent;
+			}
+		}
+	}
+
 	& td:nth-child(5) {
 		display: flex;
 		flex-direction: row;
-		align-items: flex-start;
+		align-items: center;
+		justify-content: center;
 		padding: 16px 5px;
+
+		@include mobile-screen {
+			width: 20%;
+			align-items: flex-start;
+			padding: 0;
+			padding-top: 2%;
+		}
 		& img {
 			width: 90%;
 			margin: 0;
 			padding: 0;
+			@include mobile-screen {
+				width: 60%;
+			}
 		}
 		& div {
 			width: 40%;
 			margin: 0;
 			padding: 0;
-			font-size: 16px;
+			line-height: 0.9;
+			font-size: $font-size-base;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			@include mobile-screen {
+				font-size: 12px;
+			}
+			@include tablet-screen {
+				font-size: 14px;
+			}
 		}
 	}
 
 	& th:nth-child(6) {
 		width: 10%;
+		max-width: 100px;
 	}
 
 	& th:nth-child(3),
 	th:nth-child(4),
-	th:nth-child(5),
 	th:nth-child(6) {
 		text-align: left;
 	}

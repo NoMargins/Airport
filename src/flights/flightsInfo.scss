@@ -1,16 +1,29 @@
+@import '../variables';
+@import '../breakpoints';
+
 .flight-info {
 	width: 100vw;
+	min-width: 400px;
 	margin-top: 13vh;
-	margin-bottom: 330px;
+	margin-bottom: 370px;
+	@include mobile-screen {
+		margin-top: 7vh;
+	}
 	& .covid {
 		max-width: 50%;
 		position: relative;
 		margin: 30px auto;
-		background-color: #1eb7ee;
-		color: #fff;
+		background-color: $primary-color;
+		color: $white-color;
 		padding: 15px;
 		border-radius: 0 60px 0 0;
 		transition: all 0.5s ease-in-out;
+		@include mobile-screen {
+			max-width: 98%;
+		}
+		@include tablet-screen {
+			max-width: 70%;
+		}
 
 		&:hover {
 			border-radius: 0 20px 0 0;
@@ -20,16 +33,26 @@
 			padding: 0;
 			font-size: 20px;
 			font-weight: 700;
+			@include mobile-screen {
+				font-size: 16px;
+			}
 		}
 		& span {
 			font-size: 16px;
 			font-weight: 400;
+			@include mobile-screen {
+				font-size: 12px;
+			}
 		}
 		& img {
 			width: 40px;
 			position: absolute;
 			top: 50%;
-			left: 93%;
+			left: calc(100% - 40px - 1%);
+			 @include mobile-screen {
+				height: 40px;
+				left: 90%;
+			}
 		}
 	}
 	& .title {
@@ -41,24 +64,36 @@
 		margin: 0 0 20px 0;
 		padding: 0;
 		color: rgb(36, 34, 34);
+		@include mobile-screen {
+			font-size: 35px;
+			line-height: 1;
+			margin: 0 0 10px 0;
+		}
 	}
 	&_input {
 		margin-bottom: 50px;
+		@include mobile-screen {
+			margin-bottom: 10px;
+		}
 	}
 	&_container {
 		margin-left: auto;
 		margin-right: auto;
 	}
 	&_board {
-		width: 70%;
+		width: 80%;
 		margin-left: auto;
 		margin-right: auto;
+		@include mobile-screen {
+			width: 98%;
+			min-width: 400px;
+		}
 		&__results {
 			width: 100%;
 			min-height: 200px;
 			display: flex;
 			flex-direction: column;
-			background-color: #fff;
+			background-color: $white-color;
 			& .no-results {
 				margin: auto;
 				font-size: 30px;
@@ -73,7 +108,7 @@
 			display: flex;
 			flex-direction: row;
 			justify-content: left;
-			background-color: #fff;
+			background-color: $white-color;
 
 			& .dates-nav {
 				display: flex;
@@ -84,20 +119,20 @@
 				cursor: pointer;
 
 				&.today {
-					border-bottom: 1px solid #1eb7ee;
+					border-bottom: 1px solid $primary-color;
 					& .calendar-date {
-						color: #1eb7ee;
+						color: $primary-color;
 					}
 					& .calendar-title {
-						color: #1eb7ee;
+						color: $primary-color;
 					}
 				}
 				&.closest {
 					border-bottom: 1px solid #b8b9b9;
 					&:hover {
-						border-bottom: 1px solid #1eb7ee;
+						border-bottom: 1px solid $primary-color;
 						& span {
-							color: #1eb7ee;
+							color: $primary-color;
 						}
 					}
 				}
@@ -106,12 +141,19 @@
 					font-weight: 700;
 					line-height: 24px;
 					margin-top: 18px;
+					@include mobile-screen {
+						font-size: 12px;
+						line-height: 1;
+					}
 				}
 			}
 			& span {
 				color: #b8b9b9;
 				font-size: 12px;
 				font-weight: 300;
+				@include mobile-screen {
+					font-size: 10px;
+				}
 			}
 			& .calendar {
 				padding: 0 2%;
@@ -120,13 +162,35 @@
 				& .square {
 					width: 50px;
 					height: 50px;
+					position: relative;
 					padding: 5px;
-					background-color: #1eb7ee;
+					background-color: $primary-color;
 					text-align: center;
+					& input {
+						width: 50px;
+						height: 50px;
+						position: absolute;
+						top: 0;
+						left: 0;
+						opacity: 0;
+						// visibility: hidden;
+						@include mobile-screen {
+							width: 30px;
+							height: 30px;
+						}
+					}
+					@include mobile-screen {
+						width: 30px;
+						height: 30px;
+					}
 					& .icon {
 						width: 40px;
 						height: 40px;
 						color: #fff;
+						@include mobile-screen {
+							width: 20px;
+							height: 20px;
+						}
 					}
 				}
 			}
@@ -149,44 +213,51 @@
 					justify-content: center;
 					width: 50%;
 					border-radius: 60px 60px 0 0;
-					color: #fff;
+					color: $white-color;
 					transition: all 0.5s ease-in-out;
 
 					& p {
 						text-transform: uppercase;
 						font-size: 24px;
 						font-weight: 600;
-						color: #fff;
+						color: $white-color;
+						@include mobile-screen {
+							font-size: 18px;
+						}
 					}
 					& svg {
 						width: 50px;
 						height: 50px;
 						margin: 0 10px;
 						z-index: 2;
+						@include mobile-screen {
+							width: 30px;
+							height: 30px;
+						}
 						& g {
-							fill: #fff;
+							fill: $white-color;
 							fill-rule: nonzero;
 						}
 					}
 					&:hover {
-						background-color: #fff;
+						background-color: $white-color;
 						width: 60%;
 						& p {
-							color: #1eb7ee;
+							color: $primary-color;
 						}
 						& svg g {
-							fill: #1eb7ee;
+							fill: $primary-color;
 						}
 					}
 				}
 				& .active-btn {
-					background-color: #fff;
+					background-color: $white-color;
 					width: 60%;
 					& p {
-						color: #1eb7ee;
+						color: $primary-color;
 					}
 					& svg g {
-						fill: #1eb7ee;
+						fill: $primary-color;
 					}
 				}
 			}

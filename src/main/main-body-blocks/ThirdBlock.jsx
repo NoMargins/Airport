@@ -6,7 +6,7 @@ import classNames from 'class-names';
 const ThirdBlock = () => {
 	return (
 		<div className='main_container__block'>
-			<ul className='main-body_container__block-list'>
+			<ul className='main-body_container__block-list third-block'>
 				{bodySections.map((el) => {
 					const sectClasses = classNames([
 						'list-item',

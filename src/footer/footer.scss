@@ -1,40 +1,66 @@
+@import '../variables';
+@import '../breakpoints';
+
 footer {
 	position: absolute;
 	left: 0;
 	bottom: 0;
 	width: 100%;
+	overflow-x: scroll;
 	flex: 1;
 	background-image: none;
 	background-repeat: repeat;
 	background-attachment: scroll;
 	background-position: 0% 0%;
 	background: #595959;
-	color: #fff;
+	color: $white-color;
 
 	& .footer_container {
 		margin-left: auto;
 		margin-right: auto;
-		padding: 20px 40px;
+		padding: 2% 4%;
 
 		&__main {
-			margin-bottom: 30px;
 			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			border-bottom: 1px solid #b8bdc1;
+			flex-direction: column;
+			align-items: first baseline;
+
+			@include desktop-screen {
+				max-width: 80%;
+				min-width: fit-content;
+				margin-left: auto;
+				margin-right: auto;
+				flex-direction: row;
+				justify-content: space-between;
+				border-bottom: 1px solid #b8bdc1;
+				margin-bottom: 30px;
+			}
+			@include tablet-screen {
+				flex-direction: row;
+				justify-content: space-between;
+				border-bottom: 1px solid #b8bdc1;
+				margin-bottom: 30px;
+			}
 
 			& .col {
 				width: calc(100% / 4);
+				@include mobile-screen {
+					width: 100%;
+					border-bottom: 1px solid #b8bdc1;
+					&.first-col {
+						margin-top: 5%;
+					}
+				}
 				margin: 0 30px 30px 0;
 				padding: 0;
 				display: flex;
 				flex-direction: column;
 				list-style: none;
-				font-size: 24px;
+				font-size: 1.5em;
 
 				& li {
 					display: inline-block;
-					font-size: 16px;
+					font-size: $font-size-base;
 					border-bottom: 1px solid transparent;
 					-webkit-transition: 0.2s ease-out;
 					transition: 0.2s ease-out;
@@ -50,33 +76,101 @@ footer {
 						margin-bottom: 10px;
 					}
 				}
+				&.first-col {
+					@include mobile-screen {
+						height: 20px;
+					}
+					& li {
+						@include mobile-screen {
+							&:nth-child(n + 2) {
+								display: none;
+							}
+						}
+					}
+				}
+				&.second-col {
+					@include mobile-screen {
+						height: 20px;
+					}
+					& li {
+						@include mobile-screen {
+							&:nth-child(n + 2) {
+								display: none;
+							}
+						}
+					}
+				}
+				&.third-col {
+					@include mobile-screen {
+						height: 20px;
+					}
+					& li {
+						@include mobile-screen {
+							&:nth-child(n + 2) {
+								display: none;
+							}
+						}
+					}
+				}
 			}
-
-			& .fourth-col li:first-child {
-				margin: 0 0 5px 0;
+		}
+		& .fourth-col {
+			@include mobile-screen {
+				width: 50%;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
 			}
-
-			& .fourth-col li:nth-child(3) {
-				font-weight: 700;
+			& div.telephone {
+				@include mobile-screen {
+					margin-left: 10px;
+					padding: 0;
+				}
 			}
+			& li.icons-container {
+				@include mobile-screen {
+					margin-left: 10px;
+				}
+			}
+		}
 
-			& .fourth-col li:nth-child(2) {
+		& .fourth-col li:first-child {
+			margin: 0 0 5px 0;
+		}
+
+		& .fourth-col li:nth-child(3) {
+			font-weight: 700;
+		}
+
+		& .fourth-col li:nth-child(2) {
+			@include desktop-screen {
 				margin-top: 7px;
 			}
+			@include tablet-screen {
+				margin-top: 7px;
+			}
+		}
 
-			& .icons-container {
-				margin: 0;
-				padding: 0;
-				& .icon {
-					margin-right: 10px;
-					cursor: pointer;
+		& .icons-container {
+			margin: 0;
+			padding: 0;
+			& .icon {
+				margin-right: 10px;
+				cursor: pointer;
+				&:hover {
+					color: $primary-color;
+					transition: color 0.5s ease-in-out;
 				}
 			}
 		}
 
 		&__bottom {
-			font-size: 16px;
+			font-size: $font-size-base;
 			font-weight: 700;
+			text-align: center;
+			@include mobile-screen {
+				text-align: left;
+			}
 		}
 	}
 }

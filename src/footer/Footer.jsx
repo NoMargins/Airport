@@ -17,16 +17,19 @@ const FooterElem = () => {
 			<div className='footer_container'>
 				<div className='footer_container__main'>
 					<ul className='first-col col'>
+						<li className='title'>For passangers</li>
 						{firstColItems.map(({ id, text }) => {
 							return <FooterList key={id} text={text} />;
 						})}
 					</ul>
 					<ul className='second-col col'>
+						<li className='title'>Corporate</li>
 						{secondColItems.map(({ id, text }) => {
 							return <FooterList key={id} text={text} />;
 						})}
 					</ul>
 					<ul className='third-col col'>
+						<li className='title'>Press centre</li>
 						{thirdColItems.map(({ id, text }) => {
 							return <FooterList key={id} text={text} />;
 						})}

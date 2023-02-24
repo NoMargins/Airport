@@ -1,13 +1,23 @@
+@import '../../variables';
+@import '../../breakpoints';
+
 .searching {
 	width: 100vw;
-	height: 392px;
+	min-width: 400px;
+	height: 300px;
 	display: flex;
 	position: relative;
-	top: 10vh;
+	top: 4vh;
 	color: #fff;
 	box-shadow: 0 10px 15px rgb(0 0 0 / 38%);
 	overflow: clip;
-
+	@include desktop-screen {
+		height: 392px;
+		top: 10vh;
+	}
+	@include tablet-screen {
+		top: 10vh;
+	}
 	&_container {
 		width: 100vw;
 		display: flex;
@@ -23,6 +33,16 @@
 			font-size: 70px;
 			font-weight: 300;
 			text-transform: uppercase;
+			@include mobile-screen {
+				font-size: 35px;
+				margin: 15px 0;
+				padding: 0;
+			}
+			@include tablet-screen {
+				font-size: 35px;
+				margin: 15px 0;
+				padding: 0;
+			}
 		}
 	}
 	&_textfield {
@@ -39,20 +59,44 @@
 			flex-direction: row;
 			align-items: center;
 			justify-content: center;
+			margin-left: auto;
+			margin-right: auto;
+			@include mobile-screen {
+				width: 90%;
+			}
+			@include tablet-screen {
+				width: 90%;
+			}
 
 			& .image {
-				height: 80px;
 				width: 3%;
+				height: 80px;
 				min-width: 44px;
 				position: relative;
 				padding: 10px;
-				background-color: #fff;
-				border: none;
+				background-color: $white-color;
+				border: 1px solid $white-color;
+				@include mobile-screen {
+					height: 50px;
+					width: 5%;
+				}
+				@include tablet-screen {
+					height: 50px;
+					width: 5%;
+				}
 
 				& svg {
 					height: 43px;
 					position: absolute;
 					top: 20%;
+					@include mobile-screen {
+						height: 35px;
+						top: 15%;
+					}
+					@include tablet-screen {
+						height: 35px;
+						top: 15%;
+					}
 					& g {
 						fill: #95989a;
 						fill-rule: nonzero;
@@ -66,11 +110,23 @@
 				outline: none;
 				border: none;
 				color: #95989a;
+				@include mobile-screen {
+					height: 50px;
+				}
+				@include tablet-screen {
+					height: 50px;
+				}
 			}
 
 			& a.searching-btn {
 				width: 10%;
 				min-width: 185px;
+				@include mobile-screen {
+					width: 15%;
+				}
+				@include tablet-screen {
+					width: 15%;
+				}
 
 				& input[type='button'] {
 					padding-left: 20px;
@@ -78,7 +134,7 @@
 					line-height: 80px;
 					border: none;
 					border-radius: 0px 80px 0px 0px;
-					background-color: #1eb7ee;
+					background-color: $primary-color;
 					color: #fff;
 					font-size: 26px;
 					font-weight: 700;
@@ -88,6 +144,16 @@
 					&:hover {
 						border-radius: 0px 40px 0px 0px;
 						transition: all 0.5s ease-in-out;
+					}
+					@include mobile-screen {
+						height: 50px;
+						line-height: 1;
+						font-size: 20px;
+					}
+					@include tablet-screen {
+						height: 50px;
+						line-height: 1;
+						font-size: 20px;
 					}
 				}
 			}
@@ -100,12 +166,33 @@
 				&:focus {
 					color: black;
 				}
+				@include mobile-screen {
+					width: 75%;
+					height: 50px;
+					font-size: 16px;
+					padding: 1%;
+				}
+				@include tablet-screen {
+					width: 65%;
+					height: 50px;
+					font-size: 16px;
+					padding: 1%;
+				}
 			}
 			& input[type='date'] {
 				width: 10%;
 				min-width: 175px;
 				padding: 10px;
 				font-size: 24px;
+				@include mobile-screen {
+					display: none;
+				}
+				@include tablet-screen {
+					height: 50px;
+					min-width: 30px;
+					font-size: 16px;
+					width: 7%;
+				}
 			}
 		}
 	}
@@ -117,6 +204,12 @@
 		justify-content: center;
 		margin-left: auto;
 		margin-right: auto;
+		@include mobile-screen {
+			flex-direction: column;
+		}
+		@include tablet-screen {
+			flex-direction: column;
+		}
 
 		& .btn {
 			width: 20%;
@@ -127,29 +220,43 @@
 			align-items: center;
 			margin: 0px 30px;
 			padding: 0 1%;
-			color: #1eb7ee;
-			background-color: #fff;
+			color: $primary-color;
+			background-color: $white-color;
 			font-size: 20px;
 			font-weight: 600;
 			text-transform: uppercase;
 			text-align: center;
+			@include mobile-screen {
+				width: 90%;
+				height: 50px;
+				margin: 5px auto;
+				font-size: 16px;
+				padding: 2%;
+			}
+			@include tablet-screen {
+				width: 90%;
+				height: 50px;
+				margin: 5px auto;
+				font-size: 16px;
+				padding: 2%;
+			}
 
 			& svg {
 				width: 40px;
 				height: 28px;
 				& g {
-					fill: #1eb7ee;
+					fill: $primary-color;
 					fill-rule: nonzero;
 				}
 			}
 
 			&:hover {
-				background-color: #1eb7ee;
-				color: #fff;
+				background-color: $primary-color;
+				color: $white-color;
 				transition: all 0.5s ease-in-out;
 
 				& svg g {
-					fill: #fff;
+					fill: $white-color;
 					transition: all 0.5s ease-in-out;
 				}
 			}
@@ -161,8 +268,20 @@
 	border-radius: 50px 10px 10px 10px;
 	justify-content: flex-end;
 	margin-right: 0;
+	@include mobile-screen {
+		margin-right: auto;
+	}
+	@include tablet-screen {
+		margin-right: auto;
+	}
 	& svg {
 		margin-left: 15px;
+		@include mobile-screen {
+			margin-left: 20px;
+		}
+		@include tablet-screen {
+			margin-left: 20px;
+		}
 	}
 	&:hover {
 		border-radius: 30px 10px 10px 10px;
@@ -173,8 +292,20 @@
 	border-radius: 10px 50px 10px 10px;
 	justify-content: flex-start;
 	margin-left: 0;
+	@include mobile-screen {
+		margin-left: auto;
+	}
+	@include tablet-screen {
+		margin-left: auto;
+	}
 	& svg {
 		margin-right: 15px;
+		@include mobile-screen {
+			margin-right: 20px;
+		}
+		@include tablet-screen {
+			margin-right: 20px;
+		}
 	}
 	&:hover {
 		border-radius: 10px 30px 10px 10px;

@@ -1,3 +1,6 @@
+@import '../variables';
+@import '../breakpoints';
+
 .main-body {
 	margin-bottom: 335px;
 	&_container {
@@ -5,7 +8,9 @@
 		margin-top: 13vh;
 
 		&__block-list {
-			width: 1120px;
+			width: 98%;
+			max-width: 1120px;
+			min-width: 400px;
 			margin-left: auto;
 			margin-right: auto;
 			display: flex;
@@ -14,59 +19,73 @@
 			justify-content: space-between;
 			list-style: none;
 			padding: 0;
-			margin-bottom: 30px;
 			& .list-item {
 				display: flex;
 				flex-direction: column;
 				overflow: hidden;
-				background-color: #fff;
-				color: white;
+				background-color: $white-color;
+				color: $white-color;
+				margin-bottom: 1.5em;
 				box-shadow: 0 0 10px 5px rgb(0 0 0 / 10%);
 
 				& .main-body__header {
-					height: 190px;
-					padding: 0 30px;
+					height: 125px;
+					@include desktop-screen {
+						height: 190px;
+						padding: 1em;
+					}
+					padding: 1.5em;
 					display: flex;
 					align-items: center;
 
 					& h3 {
-						width: 70%;
-						box-sizing: border-box;
-						font-size: 60px;
+						font-size: 30px;
+						@include desktop-screen {
+							font-size: 60px;
+						}
+						line-height: 0.8;
 						font-weight: 600;
 						font-stretch: extra-condensed;
 						text-transform: uppercase;
 					}
 				}
 				& .section-body {
-					height: 150px;
+					height: 125px;
+					@include desktop-screen {
+						height: 150px;
+					}
 					position: relative;
 					display: flex;
 					flex-direction: column;
-					justify-content: center;
-					background-color: #fff;
+					background-color: $white-color;
 
 					& .description {
+						width: 80%;
+						height: 70%;
 						color: #595959;
 						font-weight: 600;
 						font-size: 24px;
 						align-items: center;
+						margin-top: 20px;
+						@include mobile-screen {
+							font-size: 20px;
+						}
 					}
 					& .link {
 						width: 70%;
 						height: 50px;
 						position: absolute;
-						top: 67%;
+						top: calc(100% - 50px);
 						background: none;
 						border: none;
-						color: #1eb7ee;
+						color: $primary-color;
 						text-transform: uppercase;
 						font-weight: 700;
 						font-size: 20px;
 
 						&:hover {
-							color: #fff;
-							background-color: #1eb7ee;
+							color: $white-color;
+							background-color: $primary-color;
 							transition: all 1s ease-in-out;
 						}
 					}
@@ -78,149 +97,230 @@
 			background-color: orange;
 		}
 	}
-}
 
-li.left-elem.top-elem {
-	border-radius: 0 198px 0 0;
-	margin-bottom: 20px;
-	&:hover {
-		border-radius: 0 120px 0 0;
-		transition: all 0.5s ease-in-out;
-
-		& .section-body {
-			border-radius: 0 120px 0 0;
-			transition: all 0.5s ease-in-out;
+	& li.left-elem {
+		@include desktop-screen {
+			margin-right: 1%;
 		}
 	}
-	& .section-body {
-		border-radius: 0 148px 0 0;
-	}
-	& .description {
-		width: 80%;
-	}
-}
 
-li.right-elem.top-elem {
-	border-radius: 198px 0 0 0;
-	margin-bottom: 20px;
-	&:hover {
-		border-radius: 120px 0 0 0;
-		transition: all 0.5s ease-in-out;
-
-		& .section-body {
-			border-radius: 120px 0 0 0;
-			transition: all 0.5s ease-in-out;
+	& li.right-elem {
+		@include desktop-screen {
+			margin-left: 1%;
 		}
 	}
-	& .section-body {
-		border-radius: 148px 0 0 0;
+
+	& li.left-elem.top-elem {
+		border-radius: 0 100px 0 0;
+
+		& .description {
+			width: 80%;
+		}
+		@include desktop-screen {
+			border-radius: 0 198px 0 0;
+			&:hover {
+				border-radius: 0 120px 0 0;
+				transition: all 0.5s ease-in-out;
+
+				& .section-body {
+					border-radius: 0 120px 0 0;
+					transition: all 0.5s ease-in-out;
+				}
+			}
+			& .section-body {
+				border-radius: 0 148px 0 0;
+			}
+			& .description {
+				width: 80%;
+			}
+		}
 	}
-}
 
-li.left-elem.bottom-elem {
-	border-radius: 0 0 198px 0;
-	&:hover {
-		border-radius: 0 0 120px 0;
-		transition: all 0.5s ease-in-out;
+	& li.right-elem.top-elem {
+		border-radius: 100px 0 0 0;
 
-		& .main-body__header {
+		@include desktop-screen {
+			border-radius: 198px 0 0 0;
+			// margin-bottom: 20px;
+			&:hover {
+				border-radius: 120px 0 0 0;
+				transition: all 0.5s ease-in-out;
+
+				& .section-body {
+					border-radius: 120px 0 0 0;
+					transition: all 0.5s ease-in-out;
+				}
+			}
+			& .section-body {
+				border-radius: 148px 0 0 0;
+			}
+		}
+	}
+
+	& li.left-elem.bottom-elem {
+		border-radius: 0 0 100px 0;
+		&:hover {
 			border-radius: 0 0 120px 0;
 			transition: all 0.5s ease-in-out;
 		}
-	}
-	& .main-body__header {
-		border-radius: 0 0 148px 0;
-	}
-}
 
-li.right-elem.bottom-elem {
-	border-radius: 0 0 0 198px;
-	&:hover {
-		border-radius: 0 0 0 120px;
-		transition: all 0.5s ease-in-out;
+		@include desktop-screen {
+			border-radius: 0 0 198px 0;
+			&:hover {
+				border-radius: 0 0 120px 0;
+				transition: all 0.5s ease-in-out;
 
-		& .main-body__header {
+				& .main-body__header {
+					border-radius: 0 0 120px 0;
+					transition: all 0.5s ease-in-out;
+				}
+			}
+			& .main-body__header {
+				border-radius: 0 0 148px 0;
+			}
+		}
+	}
+
+	& li.right-elem.bottom-elem {
+		border-radius: 0 0 0 100px;
+		&:hover {
 			border-radius: 0 0 0 120px;
 			transition: all 0.5s ease-in-out;
+
+			& .main-body__header {
+				border-radius: 0 0 0 120px;
+				transition: all 0.5s ease-in-out;
+			}
+		}
+
+		@include desktop-screen {
+			border-radius: 0 0 0 198px;
+			&:hover {
+				border-radius: 0 0 0 120px;
+				transition: all 0.5s ease-in-out;
+
+				& .main-body__header {
+					border-radius: 0 0 0 120px;
+					transition: all 0.5s ease-in-out;
+				}
+			}
+			& .main-body__header {
+				border-radius: 0 0 0 148px;
+			}
 		}
 	}
-	& .main-body__header {
-		border-radius: 0 0 0 148px;
-	}
-}
 
-li.right-elem {
-	margin-left: 10px;
-}
+	// li.right-elem {
+	// 	margin-left: 10px;
+	// }
 
-li.right-elem {
-	& h3 {
-		margin-left: auto;
-		flex-direction: row;
-		justify-content: flex-end;
-		text-align: right;
-	}
-	& .section-body {
-		align-items: flex-end;
-		& .description {
-			padding: 22px 30px 60px 70px;
-			align-content: center;
-		}
-		& button {
+	& li.right-elem {
+		& h3 {
+			margin-left: auto;
+			flex-direction: row;
+			justify-content: flex-end;
 			text-align: right;
-			padding-right: 30px;
-			border-radius: 50px 0 0 0;
+		}
+		& .section-body {
+			align-items: flex-end;
+			& .description {
+				// padding: 22px 30px 60px 70px;
+				align-content: center;
+			}
+			& button {
+				text-align: right;
+				padding-right: 30px;
+				border-radius: 50px 0 0 0;
+			}
 		}
 	}
-}
 
-li.left-elem {
-	margin-right: 10px;
-}
-
-li.first-block.left-elem,
-li.second-block.left-elem,
-li.third-block.left-elem {
-	& h3 {
-		text-align: left;
-	}
-	& .section-body {
+	& li.right-elem {
 		& .description {
-			padding: 22px 70px 60px 30px;
+			text-align: right;
+			margin-right: 5%;
 		}
-		& button {
+	}
+
+	& li.first-block.left-elem,
+	li.second-block.left-elem,
+	li.third-block.left-elem {
+		& h3 {
 			text-align: left;
-			padding-left: 30px;
-			border-radius: 0 50px 0 0;
+		}
+		& .section-body {
+			& .description {
+				padding: 0 0.5em 0 1em;
+			}
+			& button {
+				text-align: left;
+				padding-left: 1.2em;
+				border-radius: 0 50px 0 0;
+			}
 		}
 	}
-}
 
-li.first-block.right-elem {
-	width: 645px;
-}
+	& li.first-block.right-elem {
+		width: 98%;
+		@include desktop-screen {
+			width: 59%;
+			max-width: 645px;
+		}
+	}
 
-li.first-block.left-elem {
-	width: 455px;
-}
+	& li.first-block.left-elem {
+		width: 98%;
+		margin-left: auto;
+		margin-right: auto;
+		@include desktop-screen {
+			width: 40%;
+			max-width: 455px;
+		}
+	}
 
-li.second-block {
-	width: 550px;
-}
+	& li.second-block {
+		width: 98%;
+		margin-left: auto;
+		margin-right: auto;
+		@include desktop-screen {
+			width: 49%;
+			max-width: 550px;
+		}
+	}
+	& .second-block {
+		margin-bottom: 0;
+	}
 
-li.third-block.left-elem {
-	width: 645px;
-}
+	& .third-block {
+		@include mobile-screen {
+			margin-bottom: 75px;
+		}
+	}
 
-li.third-block.right-elem {
-	width: 445px;
-}
+	& li.third-block.left-elem {
+		width: 98%;
+		margin-left: auto;
+		margin-right: auto;
+		@include desktop-screen {
+			width: 58%;
+			max-width: 645px;
+		}
+	}
 
-li.third-block.right-elem {
-	& .section-body {
-		& .description {
-			width: 72%;
-			text-align: right;
+	& li.third-block.right-elem {
+		width: 98%;
+		margin-left: auto;
+		margin-right: auto;
+		@include desktop-screen {
+			width: 40%;
+			max-width: 445px;
+		}
+		& .section-body {
+			& .description {
+				width: 60%;
+				margin-right: 1em;
+				text-align: right;
+			}
 		}
 	}
 }

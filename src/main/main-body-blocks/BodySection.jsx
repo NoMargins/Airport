@@ -26,7 +26,7 @@ const BodySection = ({
 				</h3>
 			</div>
 			<div className='section-body'>
-				<span className='description'>{description}</span>
+				<div className='description'>{description}</div>
 				<button className='link'>{hyperlinkText}</button>
 			</div>
 		</li>

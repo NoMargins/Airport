@@ -6,11 +6,13 @@ import {
 	SET_UPLOAD_STATUS,
 } from './search.actions';
 
+const thisDateInPast = new Date().setFullYear(new Date().getFullYear() - 2);
+
 const initialData = {
 	flightsList: [],
 	direction: 'departure',
 	searchRequest: '',
-	date: new Date('2021, 01, 14'),
+	date: new Date(thisDateInPast),
 	isPending: false,
 	error: null,
 };

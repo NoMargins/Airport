@@ -5,26 +5,23 @@ const footerItems = [
 		items: [
 			{
 				id: 8011,
-				text: 'For passangers',
-			},
-			{
-				id: 8012,
 				text: 'Flight schedule',
 			},
+
 			{
-				id: 8013,
+				id: 8012,
 				text: 'Services',
 			},
 			{
-				id: 8014,
+				id: 8013,
 				text: 'Contacts',
 			},
 			{
-				id: 8015,
+				id: 8014,
 				text: 'Privacy policy',
 			},
 			{
-				id: 8016,
+				id: 8015,
 				text: 'Feedback form',
 			},
 		],
@@ -35,26 +32,22 @@ const footerItems = [
 		items: [
 			{
 				id: 8021,
-				text: 'Corporate',
-			},
-			{
-				id: 8022,
 				text: 'Main page',
 			},
 			{
-				id: 8023,
+				id: 8022,
 				text: 'Ground Handling',
 			},
 			{
-				id: 8024,
+				id: 8023,
 				text: 'Airport characteristics',
 			},
 			{
-				id: 8015,
+				id: 8014,
 				text: 'Education Center',
 			},
 			{
-				id: 8016,
+				id: 8015,
 				text: 'Careers',
 			},
 		],
@@ -65,26 +58,22 @@ const footerItems = [
 		items: [
 			{
 				id: 8031,
-				text: 'Press centre',
-			},
-			{
-				id: 8032,
 				text: 'Main page',
 			},
 			{
-				id: 8033,
+				id: 8032,
 				text: 'Latest news',
 			},
 			{
-				id: 8034,
+				id: 8033,
 				text: 'Social & Art Projects',
 			},
 			{
-				id: 8035,
+				id: 8034,
 				text: 'Financial reports',
 			},
 			{
-				id: 8036,
+				id: 8035,
 				text: 'Traffic statistics',
 			},
 		],
