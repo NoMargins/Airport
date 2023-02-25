@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ArrivalsJet from './svg/ArrivalsJet.jsx';
@@ -13,26 +14,30 @@ const SearchDirection = ({ fetchAction, setDirection, addText }) => {
 
 	return (
 		<>
-			<div
-				className='left-btn btn'
-				id='departures'
-				onClick={() => {
-					handleClick('departure');
-				}}
-			>
-				<DeparturesJet />
-				<p>{addText + 'Departures'} </p>
-			</div>
-			<div
-				className='right-btn btn'
-				id='arrivals'
-				onClick={() => {
-					handleClick('arrival');
-				}}
-			>
-				<p>{addText + 'Arrivals'}</p>
-				<ArrivalsJet />
-			</div>
+			<Link to='/searching' style={{ textDecoration: 'none' }}>
+				<div
+					className='left-btn btn'
+					id='departures'
+					onClick={() => {
+						handleClick('departure');
+					}}
+				>
+					<DeparturesJet />
+					<p>{addText + 'Departures'} </p>
+				</div>
+			</Link>
+			<Link to='/searching' style={{ textDecoration: 'none' }}>
+				<div
+					className='right-btn btn'
+					id='arrivals'
+					onClick={() => {
+						handleClick('arrival');
+					}}
+				>
+					<p>{addText + 'Arrivals'}</p>
+					<ArrivalsJet />
+				</div>
+			</Link>
 		</>
 	);
 };

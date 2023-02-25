@@ -49,14 +49,7 @@ const SearchForm = ({
 					onChange={(e) => setSearchingRequest(e.target.value)}
 					autoComplete='off'
 				/>
-				<input
-					type='date'
-					className='searching_form__date'
-					value={moment(dateSaved).format('YYYY-MM-DD')}
-					onChange={(e) => {
-						setDate(e.target.value);
-					}}
-				/>
+
 				<Link to='/searching' className='searching-btn'>
 					<input
 						type='button'

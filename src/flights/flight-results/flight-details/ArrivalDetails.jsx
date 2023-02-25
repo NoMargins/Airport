@@ -13,7 +13,10 @@ const ArrivalDetails = ({ destination, sheduleTime, factTime, shortId }) => {
 			<div className='steps-for-arrival'>
 				<div className='steps-for-departure_container'>
 					<div className='one-section first green all-width'>
-						<div className='first-part'>
+						<div
+							className='first-part'
+							style={{ backgroundColor: '$light-grey' }}
+						>
 							<div className='green-circle'></div>
 						</div>
 						<div className='second-part'>
@@ -45,15 +48,7 @@ const ArrivalDetails = ({ destination, sheduleTime, factTime, shortId }) => {
 						<div className='first-part'>
 							<div className='blue-circle'></div>
 
-							<div
-								style={{
-									fontSize: '24px',
-									fontWeight: 700,
-									color: '#2f2f2f',
-								}}
-							>
-								~ {sheduleTime}
-							</div>
+							<div className='time-text'>~ {sheduleTime}</div>
 						</div>
 						<div className='second-part'>
 							<div className='title'>Arrival</div>

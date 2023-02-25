@@ -10,15 +10,27 @@ import DepartureDetails from './DepartureDetails';
 import './details.scss';
 
 const FlightDetails = () => {
-	let { state } = useLocation();
-	const { flightsList, type } = state;
-	const { timeFact, sheduled, destination, terminal, flightNo, shortId } =
-		flightsList;
+	// let { state } = useLocation();
+	// const { flightsList, type } = state;
+	// const { timeFact, sheduled, destination, terminal, flightNo, shortId } =
+	// 	flightsList;
 
-	const departedTime = moment(timeFact).format('HH:mm, DD.MM.YY');
-	const sheduleDate = moment(sheduled).format('DD-MM-YYYY');
-	const sheduleTime = moment(sheduled).format('HH:mm');
-	const factTime = moment(timeFact).format('HH:mm');
+	// const departedTime = moment(timeFact).format('HH:mm, DD.MM.YY');
+	// const sheduleDate = moment(sheduled).format('DD-MM-YY');
+	// const sheduleTime = moment(sheduled).format('HH:mm');
+	// const factTime = moment(timeFact).format('HH:mm');
+	// const textDate = moment(timeFact).format('HH:mm, MMM DD, YYYY');
+
+	const destination = 'Zhytomyr';
+	const sheduleTime = '12:30';
+	const terminal = 'A';
+	const shortId = 'GGF';
+	const factTime = '12:54';
+	const textDate = '12:54, 12 Oct, 2021';
+	const sheduleDate = '12-12-32';
+	const type = 'departure';
+	const flightNo = 'A567';
+	const sheduled = new Date();
 
 	const arrType = type === 'arrival';
 	const departType = type === 'departure';
@@ -93,24 +105,24 @@ const FlightDetails = () => {
 									marginBottom: '20px',
 								}}
 							>
-								{directionText} {sheduleTime}, {sheduleDate}
+								{directionText} {textDate}
 							</div>
 						</div>
 					</div>
 				</div>
-				<div className='second-col'>
-					<div className='buy-tickets' style={{ position: 'absolute' }}>
+				<div className='second-col one-section'>
+					<div className='buy-tickets subsection'>
 						<div
-							className='buy-tickets_image'
+							className='buy-tickets_image subsection-image'
 							style={{
 								background: `url(${planeImg})`,
 							}}
 						></div>
-						<div className='buy-tickets_body'>
+						<div className='buy-tickets_body container'>
 							<div className='title'>Airline tickets</div>
 							<div className='description'>Purchase tickets online</div>
 							<Link to='..' style={{ textDecoration: 'none' }}>
-								<button className='btn'>Search</button>
+								<button className='subsection-btn'>Search</button>
 							</Link>
 						</div>
 					</div>

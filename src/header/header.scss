@@ -86,7 +86,7 @@
 				line-height: 0.8;
 				padding: 0 20px;
 				@include tablet-screen {
-					padding: 0 3%;
+					padding: 0 0.5em;
 				}
 			}
 		}
@@ -104,7 +104,7 @@
 	& .language-btn {
 		width: auto;
 		height: 10vh;
-		padding: 0 35px;
+		padding: 0 20px;
 		border: none;
 		background: $primary-color;
 		color: $white-color;
@@ -112,5 +112,8 @@
 		cursor: pointer;
 		font-weight: 600;
 		line-height: 1.5;
+		@include tablet-screen {
+			padding: 0 1em 0 0.5em;
+		}
 	}
 }

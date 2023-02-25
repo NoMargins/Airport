@@ -17,11 +17,10 @@ const SearchSection = () => {
 			<div className='searching_container'>
 				<h2>Flight search</h2>
 				<SearchForm />
-				<Link to='/searching' style={{ textDecoration: 'none' }}>
+
 					<div className='searching_flights'>
 						<SearchDirections addText='All ' />
 					</div>
-				</Link>
 			</div>
 		</section>
 	);

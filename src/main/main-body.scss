@@ -41,7 +41,7 @@
 					& h3 {
 						font-size: 30px;
 						@include desktop-screen {
-							font-size: 60px;
+							font-size: 3em;
 						}
 						line-height: 0.8;
 						font-weight: 600;
@@ -287,15 +287,19 @@
 			max-width: 550px;
 		}
 	}
-	& .second-block {
-		margin-bottom: 0;
-	}
-
-	& .third-block {
-		@include mobile-screen {
-			margin-bottom: 75px;
+	& .second-block,
+	.third-block {
+		margin-bottom: 1em;
+		@include desktop-screen {
+			margin-bottom: 1em;
 		}
 	}
+
+	// & .third-block.right-elem {
+	// 	@include mobile-screen {
+	// 		margin-bottom: 75px;
+	// 	}
+	// }
 
 	& li.third-block.left-elem {
 		width: 98%;

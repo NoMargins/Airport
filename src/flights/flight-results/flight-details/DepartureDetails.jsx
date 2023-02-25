@@ -12,21 +12,27 @@ import CirclePriorityLine from './circles/CirclePriority';
 import './departure-details.scss';
 
 // flightsList, sheduleDate, sheduleTime;
-const DepartureDetails = ({
-	destination,
-	sheduled,
-	sheduleTime,
-	terminal,
-	shortId,
-}) => {
-	const approximateTime = moment(
-		new Date(sheduled).setMinutes(new Date(sheduled).getMinutes() - 15)
-	).format('HH:mm');
+const DepartureDetails = () => {
+	// destination,
+	// sheduled,
+	// sheduleTime,
+	// terminal,
+	// shortId,
+	// const approximateTime = moment(
+	// 	new Date(sheduled).setMinutes(new Date(sheduled).getMinutes() - 15)
+	// ).format('HH:mm');
 
-	const getAirportTime = moment(
-		new Date(sheduled).setHours(new Date(sheduled).getHours() - 2)
-	).format('HH:mm');
+	// const getAirportTime = moment(
+	// 	new Date(sheduled).setHours(new Date(sheduled).getHours() - 2)
+	// ).format('HH:mm');
 
+	const approximateTime = '12:34';
+	const getAirportTime = '10:20';
+	const destination = 'Zhytomyr';
+	const sheduled = '';
+	const sheduleTime = '12:30';
+	const terminal = 'A';
+	const shortId = 'GGF';
 	return (
 		<div className='container departure-container'>
 			<div className='bg-circles' style={{ position: 'relative' }}>
@@ -35,12 +41,7 @@ const DepartureDetails = ({
 						<div className='one-section first green all-width'>
 							<div className='first-part'>
 								<div className='green-circle'></div>
-								<div
-									className='text'
-									style={{ fontSize: '24px', color: '#000' }}
-								>
-									{getAirportTime}
-								</div>
+								<div className='time-text'>{getAirportTime}</div>
 							</div>
 							<div className='second-part'>
 								<div className='small-title'>Steps before departure</div>
@@ -118,15 +119,7 @@ const DepartureDetails = ({
 							<div className='first-part'>
 								<div className='blue-circle'></div>
 
-								<div
-									style={{
-										fontSize: '24px',
-										fontWeight: 700,
-										color: '#2f2f2f',
-									}}
-								>
-									~ {sheduleTime}
-								</div>
+								<div className='time-text'>~ {sheduleTime}</div>
 								<div style={{ fontSize: '12px' }}>
 									time is approximate, for your information only
 								</div>
@@ -178,7 +171,7 @@ const DepartureDetails = ({
 									></div>
 									<div className='container'>
 										<div className='title'>Long term parking</div>
-										<div className='body-description'>
+										<div className='description'>
 											You can safely leave your vehicle parked at IEV.
 										</div>
 										<button className='subsection-btn'>More info</button>
@@ -203,7 +196,6 @@ const DepartureDetails = ({
 						</div>
 						<div className='one-section fifth all-width'>
 							<div className='first-part'>
-								<div className='text'></div>
 								<div className='blue-circle'></div>
 							</div>
 							<div className='second-part'>
@@ -264,7 +256,6 @@ const DepartureDetails = ({
 						</div>
 						<div className='one-section eighth all-width'>
 							<div className='first-part'>
-								<div className='text'></div>
 								<div className='blue-circle'></div>
 							</div>
 							<div className='second-part'>
@@ -300,7 +291,7 @@ const DepartureDetails = ({
 									></div>
 									<div className='container'>
 										<div className='title'>Business Lounge</div>
-										<div className='body-description'>
+										<div className='description'>
 											Comfortable lounge to spend time before your flight
 										</div>
 										<button className='subsection-btn'>Book now</button>
@@ -311,17 +302,7 @@ const DepartureDetails = ({
 						<div className='one-section tenth all-width'>
 							<div className='first-part'>
 								<div className='blue-circle'></div>
-								<div
-									className='text'
-									style={{
-										fontSize: '24px',
-										color: '#000',
-										fontWeight: 700,
-										marginTop: '0',
-									}}
-								>
-									~{approximateTime}
-								</div>
+								<div className='time-text'>~{approximateTime}</div>
 							</div>
 							<div className='second-part'>
 								<div className='title'>Find your boarding gate A1</div>

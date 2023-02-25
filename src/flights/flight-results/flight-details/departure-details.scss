@@ -2,16 +2,6 @@
 @import '../../../breakpoints';
 
 .container {
-	& .bg-circles:before {
-		top: 0;
-		left: 0;
-		border-radius: 0 0 200px 0;
-		height: 28%;
-		position: absolute;
-		background: rgba(255, 255, 255, 0.5);
-		width: 50%;
-		z-index: 0;
-	}
 	& .steps-for-departure {
 		&_container {
 			& .one-section {
@@ -20,154 +10,46 @@
 				background-color: rgb(228, 248, 241);
 				flex-shrink: 0;
 
-				& .first-part {
-					width: 10%;
-					min-width: 100px;
-					position: relative;
-					padding: 0 26px 0 10px;
-					color: #63c745;
-					font-size: 18px;
-					text-align: right;
-					background-color: rgb(228, 248, 241);
-					& .text {
-						margin-top: -10px;
-					}
-					& .green-circle {
-						width: 24px;
-						height: 24px;
-						position: absolute;
-						background-color: #63c745;
-						border-radius: 50%;
-						z-index: 2;
-						left: calc(100% - 12px);
-						top: calc(0% - 12px);
-						@include mobile-screen {
-							width: 10px;
-							height: 10px;
-							left: calc(100% - 5px);
-							top: calc(0% - 5px);
-						}
-					}
-					& .blue-circle {
-						width: 34px;
-						height: 34px;
-						position: absolute;
-						background-color: $primary-color;
-						border-radius: 50%;
-						z-index: 2;
-						left: calc(100% - 17px);
-						top: -4px;
-						@include mobile-screen {
-							width: 16px;
-							height: 16px;
-							left: calc(100% - 8px);
-						}
-					}
-				}
+				& .subsection.steps {
+					height: 327px;
 
-				& .subsection {
-					display: flex;
-					flex-direction: column;
-					margin-bottom: 20px;
-					background-color: $white-color;
-					box-shadow: $box-shadow-popular;
-
-					&.steps {
-						height: 327px;
+					&.first {
+						border-radius: 0 80px 20px 50px;
+						width: 48%;
+						margin-right: 10px;
 						& .subsection-image {
-							height: 120px;
-							background-repeat: no-repeat;
-							overflow: hidden;
-							background-size: cover;
-							box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
-						}
-						& .title {
-							padding: 0 14px;
-							margin-top: 10px;
-							font-size: 24px;
-							font-weight: 700;
-						}
-						& .description {
-							font-size: 20px;
-							line-height: 28px;
-							padding: 0 14px;
-							color: #5a5e60;
-							margin-top: 10px;
-						}
-						& button {
-							cursor: pointer;
-							display: inline-block;
-							font-weight: 700;
-							width: 175px;
-							color: $primary-color;
-							height: 60px;
-							padding: 0;
-							line-height: 54px;
-							border: 3px solid $primary-color;
-							border-radius: 30px;
-							font-size: 20px;
-							margin: 15px 14px 20px;
-							-webkit-transition: 0.3s ease-out;
-							transition: 0.3s ease-out;
-							text-transform: uppercase;
-							&:hover {
-								background-color: $primary-color;
-								color: $white-color;
-								transition: all 0.5s ease-in-out;
-							}
-						}
-						&.first {
-							border-radius: 0 80px 20px 50px;
-							width: 48%;
-							margin-right: 10px;
-							& .subsection-image {
-								border-radius: 0 80px 40px 0;
-								background-position: left;
-							}
-						}
-						&.second {
-							border-radius: 60px 60px 20px 50px;
-							width: 48%;
-							& .subsection-image {
-								border-radius: 60px;
-								background-position: center;
-							}
-						}
-						&.third {
-							width: 70%;
-							min-width: 300px;
-							border-radius: 80px 0 20px 50px;
-							margin: 28px 0 0 -30px;
-							& .subsection-image {
-								border-radius: 80px 0 0 40px;
-								background-position: left;
+							border-radius: 0 80px 40px 0;
+							background-position: left;
+							@include mobile-screen {
+								visibility: none;
 							}
 						}
 					}
-					& .container {
-						margin-left: 20px;
-						& .title {
-							margin: 20px 0 20px;
-							font-size: 24px;
-							font-weight: 700;
+					&.second {
+						border-radius: 60px 60px 20px 50px;
+						width: 48%;
+						& .subsection-image {
+							border-radius: 60px;
+							background-position: center;
+							@include mobile-screen {
+								visibility: none;
+							}
 						}
-						& button {
-							font-weight: 700;
-							width: 60%;
-							min-width: 140px;
-							color: $primary-color;
-							background-color: $white-color;
-							height: 60px;
-							padding: 0;
-							line-height: 54px;
-							border: 3px solid $primary-color;
-							border-radius: 30px;
-							font-size: 20px;
-							text-transform: uppercase;
-							margin: 15px 0 20px;
+					}
+					&.third {
+						width: 70%;
+						min-width: 200px;
+						border-radius: 80px 0 20px 50px;
+						margin: 28px 0 0 -30px;
+						@include tablet-screen {
+							margin: 28px 0 0;
 						}
-						& .description {
-							font-size: 20px;
+						& .subsection-image {
+							border-radius: 80px 0 0 40px;
+							background-position: left;
+							@include mobile-screen {
+								visibility: none;
+							}
 						}
 					}
 				}
@@ -213,10 +95,6 @@
 						font-size: 20px;
 						line-height: 28px;
 					}
-				}
-				& .third-part {
-					width: 40%;
-					padding: 30px;
 				}
 			}
 		}
