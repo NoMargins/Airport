@@ -18,7 +18,7 @@ const App = () => {
 					<Routes>
 						<Route path='/' element={<MainBody />} />
 						<Route path='/searching' element={<FlightInfo />} />
-						<Route path='/details' element={<FlightDetails />} />
+						<Route path='/searching/details/:id' element={<FlightDetails />} />
 					</Routes>
 				</BrowserRouter>
 				<FooterElem />

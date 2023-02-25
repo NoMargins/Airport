@@ -10,27 +10,27 @@ import DepartureDetails from './DepartureDetails';
 import './details.scss';
 
 const FlightDetails = () => {
-	// let { state } = useLocation();
-	// const { flightsList, type } = state;
-	// const { timeFact, sheduled, destination, terminal, flightNo, shortId } =
-	// 	flightsList;
+	let { state } = useLocation();
+	const { flightsList, type } = state;
+	const { timeFact, sheduled, destination, terminal, flightNo, shortId } =
+		flightsList;
 
-	// const departedTime = moment(timeFact).format('HH:mm, DD.MM.YY');
-	// const sheduleDate = moment(sheduled).format('DD-MM-YY');
-	// const sheduleTime = moment(sheduled).format('HH:mm');
-	// const factTime = moment(timeFact).format('HH:mm');
-	// const textDate = moment(timeFact).format('HH:mm, MMM DD, YYYY');
+	const departedTime = moment(timeFact).format('HH:mm, DD.MM.YY');
+	const sheduleDate = moment(sheduled).format('DD-MM-YY');
+	const sheduleTime = moment(sheduled).format('HH:mm');
+	const factTime = moment(timeFact).format('HH:mm');
+	const textDate = moment(timeFact).format('HH:mm, MMM DD, YYYY');
 
-	const destination = 'Zhytomyr';
-	const sheduleTime = '12:30';
-	const terminal = 'A';
-	const shortId = 'GGF';
-	const factTime = '12:54';
-	const textDate = '12:54, 12 Oct, 2021';
-	const sheduleDate = '12-12-32';
-	const type = 'departure';
-	const flightNo = 'A567';
-	const sheduled = new Date();
+	// const destination = 'Zhytomyr';
+	// const sheduleTime = '12:30';
+	// const terminal = 'A';
+	// const shortId = 'GGF';
+	// const factTime = '12:54';
+	// const textDate = '12:54, 12 Oct, 2021';
+	// const sheduleDate = '12-12-32';
+	// const type = 'departure';
+	// const flightNo = 'A567';
+	// const sheduled = new Date();
 
 	const arrType = type === 'arrival';
 	const departType = type === 'departure';
