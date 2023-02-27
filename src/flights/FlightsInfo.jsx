@@ -148,7 +148,7 @@ const FlightInfo = ({
 						</div>
 					</div>
 					<div className='flight-info_board__results'>
-						{flightsList.length > 0 && (
+						{flightsList.length > 0 && !isPending && (
 							<FlightsResult list={flightsList} type={searchDirection} />
 						)}
 						{isPending && <span className='no-results'>Loading...</span>}
