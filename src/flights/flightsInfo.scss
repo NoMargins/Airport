@@ -6,6 +6,8 @@
 	min-width: 400px;
 	margin-top: 13vh;
 	margin-bottom: 370px;
+	overflow: hidden;
+
 	@include mobile-screen {
 		margin-top: 7vh;
 	}
@@ -49,7 +51,7 @@
 			position: absolute;
 			top: 50%;
 			left: calc(100% - 40px - 1%);
-			 @include mobile-screen {
+			@include mobile-screen {
 				height: 40px;
 				left: 90%;
 			}
