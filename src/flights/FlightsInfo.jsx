@@ -111,7 +111,7 @@ const FlightInfo = ({
 								<form>
 									<input
 										type='date'
-										onChange={(e) => setDate(e.target.value)}
+										onChange={(e) => handleDateChangeClick(e.target.value)}
 									/>
 								</form>
 								<FontAwesomeIcon className='icon' icon={regular('calendar')} />
