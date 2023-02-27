@@ -46,19 +46,12 @@ const DepartureDetails = () => {
 							<div className='second-part'>
 								<div className='small-title'>Steps before departure</div>
 								<div className='big-title'>First of all</div>
-								<div
-									className='subsections'
-									style={{ display: 'flex', flexDirection: 'row' }}
-								>
+								<div className='subsections'>
 									<div className='subsection steps first'>
 										<div
 											className='subsection-image'
 											style={{
-												background: `url(${priorityImg})`,
-												height: '120px',
-												overflow: 'hidden',
-												backgroundSize: 'cover',
-												backgroundRepeat: 'no-repeat',
+												backgroundImage: `url(${priorityImg})`,
 												backgroundPosition: 'left',
 											}}
 										></div>
@@ -74,11 +67,7 @@ const DepartureDetails = () => {
 										<div
 											className='subsection-image'
 											style={{
-												background: `url(${covidImg})`,
-												height: '120px',
-												overflow: 'hidden',
-												backgroundSize: 'cover',
-												backgroundRepeat: 'no-repeat',
+												backgroundImage: `url(${covidImg})`,
 												backgroundPosition: 'left',
 											}}
 										></div>
@@ -97,12 +86,7 @@ const DepartureDetails = () => {
 									<div
 										className='subsection-image'
 										style={{
-											background: `url(${vipImg})`,
-											height: '120px',
-											overflow: 'hidden',
-											backgroundSize: 'cover',
-											backgroundRepeat: 'no-repeat',
-											backgroundPosition: 'left',
+											backgroundImage: `url(${vipImg})`,
 										}}
 									></div>
 									<div className='container'>

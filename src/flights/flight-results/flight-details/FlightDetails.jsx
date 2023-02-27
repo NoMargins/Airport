@@ -111,11 +111,14 @@ const FlightDetails = () => {
 					</div>
 				</div>
 				<div className='second-col one-section'>
-					<div className='buy-tickets subsection'>
+					<div
+						className='buy-tickets subsection'
+		
+					>
 						<div
 							className='buy-tickets_image subsection-image'
 							style={{
-								background: `url(${planeImg})`,
+								backgroundImage: `url(${planeImg})`,
 							}}
 						></div>
 						<div className='buy-tickets_body container'>

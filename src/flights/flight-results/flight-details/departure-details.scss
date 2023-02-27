@@ -9,46 +9,73 @@
 				flex-direction: row;
 				background-color: rgb(228, 248, 241);
 				flex-shrink: 0;
+				& .subsections {
+					@include desktop-screen {
+						display: flex;
+						flex-direction: row;
+					}
 
-				& .subsection.steps {
-					height: 327px;
-
-					&.first {
-						border-radius: 0 80px 20px 50px;
-						width: 48%;
-						margin-right: 10px;
-						& .subsection-image {
-							border-radius: 0 80px 40px 0;
-							background-position: left;
-							@include mobile-screen {
-								visibility: none;
+					& .subsection.steps {
+						@include desktop-screen {
+							height: 425px;
+						}
+						& .subsection-btn {
+							font-size: 16px;
+							@include desktop-screen {
+								font-size: 20px;
 							}
 						}
-					}
-					&.second {
-						border-radius: 60px 60px 20px 50px;
-						width: 48%;
 						& .subsection-image {
-							border-radius: 60px;
-							background-position: center;
-							@include mobile-screen {
-								visibility: none;
+							height: 120px;
+							overflow: hidden;
+							background-size: cover;
+							background-repeat: no-repeat;
+							background-position: left;
+						}
+
+						&.first {
+							border-radius: 0 80px 20px 50px;
+							width: 90%;
+							margin-right: 10px;
+							@include desktop-screen {
+								width: 48%;
+							}
+							& .subsection-image {
+								border-radius: 0 80px 40px 0;
+								background-position: left;
+								@include mobile-screen {
+									visibility: none;
+								}
 							}
 						}
-					}
-					&.third {
-						width: 70%;
-						min-width: 200px;
-						border-radius: 80px 0 20px 50px;
-						margin: 28px 0 0 -30px;
-						@include tablet-screen {
-							margin: 28px 0 0;
+						&.second {
+							border-radius: 60px 60px 20px 50px;
+							width: 90%;
+							@include desktop-screen {
+								width: 48%;
+							}
+							& .subsection-image {
+								border-radius: 60px;
+								background-position: center;
+								@include mobile-screen {
+									visibility: none;
+								}
+							}
 						}
-						& .subsection-image {
-							border-radius: 80px 0 0 40px;
-							background-position: left;
-							@include mobile-screen {
-								visibility: none;
+						&.third {
+							width: 70%;
+							min-width: 200px;
+							border-radius: 80px 0 20px 50px;
+							margin: 28px 0 0 -30px;
+							@include tablet-screen {
+								margin: 28px 0 0;
+							}
+							& .subsection-image {
+								border-radius: 80px 0 0 40px;
+								background-position: left;
+								@include mobile-screen {
+									visibility: none;
+								}
 							}
 						}
 					}
