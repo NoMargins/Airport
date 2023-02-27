@@ -169,11 +169,11 @@
 					background-color: $primary-color;
 					text-align: center;
 					& input {
-						width: 50px;
+						width: 26px;
 						height: 50px;
 						position: absolute;
 						top: 0;
-						left: 0;
+						left: calc((100% - 26px) / 2);
 						opacity: 0;
 						// visibility: hidden;
 						@include mobile-screen {
