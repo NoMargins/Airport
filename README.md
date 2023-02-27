@@ -1,7 +1,7 @@
 # Airport
 💎[Click here and watch live this website](https://dynamic-biscochitos-0e866b.netlify.app/)💎
 
-This is a web-based application built with React that provides a landing page for airport with flights information. 
+This is a responsive web-based application built with React that provides a landing page for airport with flights information. 
 On this application, users can search information about existing flights and view details about them.
 
 The tech stack is:
